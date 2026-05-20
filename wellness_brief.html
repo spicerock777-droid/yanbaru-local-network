@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>やんばるがウェルネスに取り組む意義</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+  :root {
+    --forest: #2d6a4f;
+    --forest-light: #40916c;
+    --forest-pale: #d8f3dc;
+    --ocean: #1a6b8a;
+    --ocean-light: #48cae4;
+    --ocean-pale: #caf0f8;
+    --sand: #f9f4ea;
+    --sand-dark: #e8dcc8;
+    --text: #1a1a1a;
+    --text-muted: #555;
+    --accent: #e07b39;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text);
+    background: #e0e0e0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    margin: 10mm auto;
+    padding: 14mm 16mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; }
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--forest);
+    padding-bottom: 3mm;
+    margin-bottom: 6mm;
+  }
+
+  .page-header h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14pt;
+    color: var(--forest);
+  }
+
+  .page-num {
+    font-size: 8pt;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .section-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--forest);
+    letter-spacing: 0.08em;
+    margin-bottom: 3mm;
+    padding-left: 3mm;
+    border-left: 3px solid var(--forest);
+  }
+
+  /* ===== COVER ===== */
+  .cover {
+    background: linear-gradient(160deg, #0d3b2e 0%, #1a6b8a 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20mm 18mm;
+  }
+
+  .cover-label {
+    font-size: 8pt;
+    letter-spacing: 0.25em;
+    color: var(--ocean-light);
+    margin-bottom: 5mm;
+  }
+
+  .cover-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 24pt;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 6mm;
+  }
+
+  .cover-sub {
+    font-size: 10pt;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.8;
+    margin-bottom: 10mm;
+  }
+
+  .cover-toc {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 5mm 6mm;
+  }
+
+  .cover-toc-title {
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: var(--ocean-light);
+    letter-spacing: 0.1em;
+    margin-bottom: 3mm;
+  }
+
+  .cover-toc-item {
+    display: flex;
+    gap: 3mm;
+    align-items: baseline;
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 2mm;
+    line-height: 1.5;
+  }
+
+  .cover-toc-num {
+    color: var(--ocean-light);
+    font-weight: 700;
+    font-size: 7.5pt;
+    flex-shrink: 0;
+    width: 6mm;
+  }
+
+  .cover-meta {
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.45);
+    margin-top: 8mm;
+  }
+
+  /* ===== STAT CARDS ===== */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3mm;
+    margin-bottom: 5mm;
+  }
+
+  .stat-card {
+    background: var(--forest-pale);
+    border-radius: 10px;
+    padding: 4mm 5mm;
+    text-align: center;
+  }
+
+  .stat-card.ocean { background: var(--ocean-pale); }
+  .stat-card.sand { background: var(--sand); border: 1px solid var(--sand-dark); }
+
+  .stat-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 20pt;
+    font-weight: 700;
+    color: var(--forest);
+    line-height: 1.1;
+    margin-bottom: 1mm;
+  }
+
+  .stat-card.ocean .stat-num { color: var(--ocean); }
+
+  .stat-unit {
+    font-size: 8pt;
+    color: var(--forest);
+    font-weight: 500;
+    margin-bottom: 1.5mm;
+  }
+
+  .stat-card.ocean .stat-unit { color: var(--ocean); }
+
+  .stat-label {
+    font-size: 7pt;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ===== ASSET GRID ===== */
+  .asset-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm;
+    margin-bottom: 5mm;
+  }
+
+  .asset-card {
+    border: 1.5px solid var(--forest);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .asset-head {
+    background: var(--forest);
+    color: white;
+    font-size: 8pt;
+    font-weight: 700;
+    padding: 2.5mm 4mm;
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+  }
+
+  .asset-body {
+    padding: 3mm 4mm;
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .asset-body strong { color: var(--forest); }
+
+  /* ===== COMPARISON TABLE ===== */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 3mm;
+    align-items: stretch;
+    margin-bottom: 5mm;
+  }
+
+  /* ===== FLOW ===== */
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+    flex-wrap: wrap;
+    margin-bottom: 3mm;
+  }
+
+  .flow-node {
+    background: var(--forest-pale);
+    border: 1.5px solid var(--forest);
+    border-radius: 8px;
+    padding: 2.5mm 4mm;
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--forest);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .flow-arrow {
+    color: var(--accent);
+    font-size: 12pt;
+    font-weight: 700;
+  }
+
+  /* ===== EVIDENCE PILL ===== */
+  .evidence-pill {
+    display: inline-block;
+    background: var(--ocean-pale);
+    border: 1px solid var(--ocean-light);
+    border-radius: 20px;
+    padding: 1mm 3mm;
+    font-size: 7pt;
+    color: var(--ocean);
+    font-weight: 700;
+    margin: 1mm 1mm 0 0;
+  }
+
+  /* ===== SOURCE ===== */
+  .source-note {
+    font-size: 6.5pt;
+    color: #aaa;
+    margin-top: 1mm;
+  }
+  /* ===== NAV BAR ===== */
+  .doc-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(13, 59, 46, 0.96);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    gap: 12px;
+  }
+
+  .doc-nav-brand {
+    color: rgba(255,255,255,0.4);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .doc-nav-tabs {
+    display: flex;
+    gap: 4px;
+  }
+
+  .doc-nav-tab {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+
+  .doc-nav-tab.active {
+    background: rgba(255,255,255,0.18);
+    color: white;
+  }
+
+  .doc-nav-tab:not(.active) {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .doc-nav-tab:not(.active):hover {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .doc-nav-home {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    text-decoration: none;
+    color: #48cae4;
+    border: 1px solid rgba(72,202,228,0.4);
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+
+  .doc-nav-home:hover {
+    background: rgba(72,202,228,0.1);
+  }
+
+  body { padding-top: 36px; }
+
+  @media print { .doc-nav { display: none; } body { padding-top: 0; } }
+</style>
+</head>
+<body>
+
+<nav class="doc-nav">
+  <span class="doc-nav-brand">YANBARU LOCAL NETWORK</span>
+  <div class="doc-nav-tabs">
+    <a class="doc-nav-tab active" href="wellness_brief.html">DOC 01　ウェルネスの意義</a>
+    <a class="doc-nav-tab" href="presentation.html">DOC 02　ネットワーク提案</a>
+  </div>
+  <a class="doc-nav-home" href="index.html">← 資料一覧</a>
+</nav>
+
+<!-- ======================== COVER ======================== -->
+<div class="page cover">
+  <div>
+    <div class="cover-label">YANBARU WELLNESS BRIEF　2025</div>
+    <div class="cover-title">やんばるが<br>ウェルネスに<br>取り組む意義</div>
+    <div class="cover-sub">
+      グローバルウェルネス市場6.8兆ドルの潮流と、<br>
+      やんばるにしかできない「再生型ウェルネス」の根拠
+    </div>
+  </div>
+
+  <div>
+    <div class="cover-toc">
+      <div class="cover-toc-title">CONTENTS</div>
+      <div class="cover-toc-item"><span class="cover-toc-num">01</span>ウェルネスとは何か ― 定義と歴史</div>
+      <div class="cover-toc-item"><span class="cover-toc-num">02</span>グローバル市場の規模と成長</div>
+      <div class="cover-toc-item"><span class="cover-toc-num">03</span>なぜ今か ― 世界が「再生型」へ動いている</div>
+      <div class="cover-toc-item"><span class="cover-toc-num">04</span>世界の先進事例 ― タイ・コスタリカ・ブータン</div>
+      <div class="cover-toc-item"><span class="cover-toc-num">05</span>やんばるの固有資産 ― 世界水準で何を持っているか</div>
+      <div class="cover-toc-item"><span class="cover-toc-num">06</span>やんばるにしかできない理由</div>
+    </div>
+    <div class="cover-meta">
+      出典：Global Wellness Institute（GWI）2025 Global Wellness Economy Monitor ほか<br>
+      やんばる・今帰仁村現地調査、名護市基本構想（1970年代）
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 1: WHAT IS WELLNESS ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>01　ウェルネスとは何か</h2>
+    <span class="page-num">1 / 7</span>
+  </div>
+
+  <div class="section-title">定義</div>
+  <div style="background: linear-gradient(135deg, #0d3b2e, #1a6b8a); border-radius: 10px; padding: 5mm 7mm; color: white; margin-bottom: 5mm;">
+    <div style="font-family: 'Noto Serif JP', serif; font-size: 12pt; line-height: 1.8; color: rgba(255,255,255,0.95);">
+      「ウェルネスとは、<strong style="color: #7de8c8;">健康を最大限に引き出すための、積極的な追求</strong>である。<br>
+      病気がない状態ではなく、身体・心・社会・環境が調和した<strong style="color: #7de8c8;">充実した状態</strong>を指す」
+    </div>
+    <div style="font-size: 7.5pt; color: rgba(255,255,255,0.5); margin-top: 3mm;">― Halbert L. Dunn, High-Level Wellness（1961）現代ウェルネス概念の起点</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-bottom: 5mm;">
+    <div>
+      <div class="section-title">ウェルネスの6領域</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; margin-top: 2mm;">
+        <div style="background: var(--forest-pale); border-radius: 6px; padding: 2.5mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--forest); text-align: center;">🌿 身体</div>
+        <div style="background: var(--forest-pale); border-radius: 6px; padding: 2.5mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--forest); text-align: center;">🧠 精神・感情</div>
+        <div style="background: var(--ocean-pale); border-radius: 6px; padding: 2.5mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--ocean); text-align: center;">🤝 社会・つながり</div>
+        <div style="background: var(--ocean-pale); border-radius: 6px; padding: 2.5mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--ocean); text-align: center;">🌍 環境</div>
+        <div style="background: var(--sand); border-radius: 6px; padding: 2.5mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--accent); text-align: center; border: 1px solid var(--sand-dark);">💡 知的・創造性</div>
+        <div style="background: var(--sand); border-radius: 6px; padding: 2.5mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--accent); text-align: center; border: 1px solid var(--sand-dark);">🙏 精神性・意味</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-title">医療との違い</div>
+      <div style="margin-top: 2mm;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5mm; font-size: 7.5pt;">
+          <div style="background: #f5f5f5; border-radius: 6px; padding: 2.5mm 3mm;">
+            <div style="font-weight: 700; color: #999; margin-bottom: 1mm;">医療</div>
+            <div style="color: #888; line-height: 1.6;">病気・症状を治す<br>受動的・事後対応<br>「治療」が目的</div>
+          </div>
+          <div style="background: var(--forest-pale); border-radius: 6px; padding: 2.5mm 3mm;">
+            <div style="font-weight: 700; color: var(--forest); margin-bottom: 1mm;">ウェルネス</div>
+            <div style="color: var(--forest); line-height: 1.6;">健康を最大化する<br>能動的・予防的<br>「充実」が目的</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">ウェルネスの歴史的系譜</div>
+  <div style="position: relative; padding-left: 5mm;">
+    <div style="position: absolute; left: 3px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--forest), var(--ocean), var(--accent)); border-radius: 2px;"></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2mm; padding-left: 3mm;">
+      <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">
+        <div style="font-weight: 700; color: var(--forest); margin-bottom: 1mm;">紀元前3,000年〜</div>
+        アーユルヴェーダ・中医学が起源。身体・心・精神の調和という思想の始まり。
+      </div>
+      <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">
+        <div style="font-weight: 700; color: var(--forest); margin-bottom: 1mm;">1961年</div>
+        ダン「High-Level Wellness」出版。現代ウェルネス概念の確立。
+      </div>
+      <div style="background: var(--ocean-pale); border-radius: 8px; padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">
+        <div style="font-weight: 700; color: var(--ocean); margin-bottom: 1mm;">2014年</div>
+        GWI設立。世界初の産業規模測定（3.4兆ドル）。ウェルネスが「産業」になった転換点。
+      </div>
+      <div style="background: #fff8f0; border-radius: 8px; padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6; border: 1px solid var(--sand-dark);">
+        <div style="font-weight: 700; color: var(--accent); margin-bottom: 1mm;">2024年〜</div>
+        6.8兆ドル規模。「再生型ウェルネス（Regenerative Wellness）」が世界的潮流へ。
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 5mm; background: var(--sand); border-radius: 8px; padding: 3mm 5mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7; border: 1px solid var(--sand-dark);">
+    <strong style="color: var(--forest);">やんばるとの接続：</strong>
+    アーユルヴェーダや中医学が「身体・自然・環境の調和」を起源とするように、
+    やんばるの自然・農業・集落文化は「人が自然の一部として生きる」という世界最古のウェルネス観と本質的に一致している。
+    これは後から作られたものではなく、やんばるに元からあるものだ。
+  </div>
+</div>
+
+<!-- ======================== PAGE 2: MARKET ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>02　グローバル市場の規模と成長</h2>
+    <span class="page-num">2 / 7</span>
+  </div>
+
+  <div class="section-title">市場規模（出典：GWI 2025 Global Wellness Economy Monitor）</div>
+  <div class="stat-grid" style="margin-bottom: 2mm;">
+    <div class="stat-card">
+      <div class="stat-num">6.8<span style="font-size: 12pt;">兆ドル</span></div>
+      <div class="stat-unit">2024年 世界ウェルネス経済規模</div>
+      <div class="stat-label">世界GDPの6.12%<br>IT・観光・スポーツを上回る</div>
+    </div>
+    <div class="stat-card ocean">
+      <div class="stat-num" style="color:var(--ocean);">9.8<span style="font-size: 12pt;">兆ドル</span></div>
+      <div class="stat-unit" style="color:var(--ocean);">2029年 予測規模</div>
+      <div class="stat-label">年7.6%成長予測<br>世界GDP成長の2倍以上</div>
+    </div>
+    <div class="stat-card sand">
+      <div class="stat-num" style="color:var(--accent);">2×</div>
+      <div class="stat-unit" style="color:var(--accent);">2013年比 倍増</div>
+      <div class="stat-label">年平均6.5%成長<br>世界GDPの3.2%成長を大幅上回る</div>
+    </div>
+  </div>
+  <div class="source-note" style="margin-bottom: 5mm;">出典：Global Wellness Institute, 2025 Global Wellness Economy Monitor（2025年）</div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-bottom: 5mm;">
+    <div>
+      <div class="section-title">最速成長セクター（2019〜2024年）</div>
+      <div style="margin-top: 2mm; display: flex; flex-direction: column; gap: 2mm;">
+        <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm 4mm; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 700; color: var(--forest);">ウェルネス不動産</div>
+            <div style="font-size: 7pt; color: var(--text-muted);">8,760億ドル → 2030年1.8兆ドル予測</div>
+          </div>
+          <div style="font-size: 13pt; font-weight: 700; color: var(--forest);">+19.5%<span style="font-size: 7pt;">/年</span></div>
+        </div>
+        <div style="background: var(--ocean-pale); border-radius: 8px; padding: 3mm 4mm; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 700; color: var(--ocean);">メンタルウェルネス</div>
+            <div style="font-size: 7pt; color: var(--text-muted);">1,200億ドル超（市場）</div>
+          </div>
+          <div style="font-size: 13pt; font-weight: 700; color: var(--ocean);">+12.4%<span style="font-size: 7pt;">/年</span></div>
+        </div>
+        <div style="background: #fff8f0; border-radius: 8px; padding: 3mm 4mm; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--sand-dark);">
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 700; color: var(--accent);">ウェルネスツーリズム</div>
+            <div style="font-size: 7pt; color: var(--text-muted);">2025年 1.3兆ドル規模</div>
+          </div>
+          <div style="font-size: 13pt; font-weight: 700; color: var(--accent);">急拡大</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-title">日本のポジション</div>
+      <div style="margin-top: 2mm; display: flex; flex-direction: column; gap: 2mm;">
+        <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+          <strong style="color: var(--forest); display: block; margin-bottom: 1mm;">Bloomberg・FT・NYTが言及</strong>
+          日本は中国・ドイツと並ぶ「世界トップクラスのウェルネス市場」として国際メディアに認知されている。
+        </div>
+        <div style="background: #fff8f0; border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7; border: 1px solid var(--sand-dark);">
+          <strong style="color: var(--accent); display: block; margin-bottom: 1mm;">しかし「発信側」にはなれていない</strong>
+          GWIの国別データで日本はアーカイブ扱い（2017〜2023年のみ）。アジアの主力はタイ・マレーシア・シンガポール・フィリピン。
+        </div>
+        <div style="background: var(--ocean-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--ocean); line-height: 1.7;">
+          <strong style="display: block; margin-bottom: 1mm;">やんばるが先駆けになれる</strong>
+          日本がウェルネスツーリズムの「受け手」から「発信地」に転換する最有力候補。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">11のウェルネスセクターと、やんばるとの接続点</div>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5mm; margin-top: 2mm;">
+    <div style="background: var(--forest-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--forest); font-weight: 700; text-align: center;">🌿 ウェルネス不動産</div>
+    <div style="background: var(--forest-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--forest); font-weight: 700; text-align: center;">🏃 身体活動</div>
+    <div style="background: var(--ocean-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--ocean); font-weight: 700; text-align: center;">🧠 精神ウェルネス</div>
+    <div style="background: #fff3e0; border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--accent); font-weight: 700; border: 2px solid var(--accent); text-align: center;">✈️ ウェルネスツーリズム ◀</div>
+    <div style="background: #f5f5f5; border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: #999; text-align: center;">💼 職場ウェルネス</div>
+    <div style="background: #f5f5f5; border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: #999; text-align: center;">♨️ スパ</div>
+    <div style="background: var(--forest-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--forest); font-weight: 700; text-align: center;">🌊 温泉・鉱泉 ◀</div>
+    <div style="background: var(--forest-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--forest); font-weight: 700; text-align: center;">🍃 健康食 ◀</div>
+    <div style="background: #f5f5f5; border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: #999; text-align: center;">💄 ビューティー</div>
+    <div style="background: var(--ocean-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--ocean); font-weight: 700; text-align: center;">🌿 伝統医学 ◀</div>
+    <div style="background: #f5f5f5; border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: #999; text-align: center;">🏥 ヘルスケア</div>
+    <div style="background: var(--sand); border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--text-muted); text-align: center; border: 1px solid var(--sand-dark);">◀ 接続可能</div>
+  </div>
+  <div class="source-note">◀ はやんばるが直接接続できるセクター（伝統医療＝琉球の民間療法・薬草、健康食＝今帰仁マンゴー・スイカ・シークヮーサー、温泉＝海洋深層水）</div>
+</div>
+
+<!-- ======================== PAGE 3: WHY NOW ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>03　なぜ今か ― 世界が「再生型」へ動いている</h2>
+    <span class="page-num">3 / 7</span>
+  </div>
+
+  <div class="section-title">世界のウェルネスツーリズムが「消費型」から「再生型」へシフトしている</div>
+
+  <div class="compare-grid" style="margin-bottom: 5mm;">
+    <div style="background: #f7f7f7; border: 1.5px solid #ddd; border-radius: 10px; padding: 5mm;">
+      <div style="font-size: 8pt; font-weight: 700; color: #999; margin-bottom: 3mm;">消費型ウェルネスツーリズム（旧来型）</div>
+      <div style="font-size: 7.5pt; color: #888; line-height: 1.8; margin-bottom: 3mm;">
+        自然・文化を消費する体験。<br>
+        観光客は癒しを受け取って帰る。<br>
+        地域の自然・文化は少しずつ摩耗する。<br>
+        お金は外部プラットフォームに流れる。
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5mm;">
+        <span style="background: #eee; color: #999; border-radius: 20px; padding: 1mm 3mm; font-size: 6.5pt;">受け取るだけ</span>
+        <span style="background: #eee; color: #999; border-radius: 20px; padding: 1mm 3mm; font-size: 6.5pt;">消耗型</span>
+        <span style="background: #eee; color: #999; border-radius: 20px; padding: 1mm 3mm; font-size: 6.5pt;">外部依存</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; font-size: 16pt; color: var(--accent); font-weight: 900;">→</div>
+    <div style="background: linear-gradient(135deg, #0d3b2e, #1a6b8a); border-radius: 10px; padding: 5mm; color: white;">
+      <div style="font-size: 8pt; font-weight: 700; color: #7de8c8; margin-bottom: 3mm;">再生型ウェルネスツーリズム（世界の潮流）</div>
+      <div style="font-size: 7.5pt; color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 3mm;">
+        自然のポテンシャルを引き出す体験。<br>
+        観光客も再生活動に「参加」できる。<br>
+        環境が整うほど体験の質が上がる。<br>
+        お金が地域に循環する。
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5mm;">
+        <span style="background: rgba(255,255,255,0.15); color: #7de8c8; border-radius: 20px; padding: 1mm 3mm; font-size: 6.5pt;">再生・享受</span>
+        <span style="background: rgba(255,255,255,0.15); color: #7de8c8; border-radius: 20px; padding: 1mm 3mm; font-size: 6.5pt;">自然も人も豊かに</span>
+        <span style="background: rgba(255,255,255,0.15); color: #7de8c8; border-radius: 20px; padding: 1mm 3mm; font-size: 6.5pt;">地域自立</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">GWI（世界ウェルネス研究機関）が示す3つの世界的潮流</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-bottom: 5mm;">
+    <div style="border: 1.5px solid var(--forest); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--forest); color: white; padding: 2.5mm 4mm; font-size: 7.5pt; font-weight: 700;">① Responsible Wellness Tourism</div>
+      <div style="padding: 3mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        「責任あるウェルネスツーリズム」が政策テーマに。過剰消費・環境破壊を避け、地域と旅行者が共に持続できる設計が求められている。
+        <div class="evidence-pill" style="margin-top: 2mm; display: block;">GWI Brief 2025年8月</div>
+      </div>
+    </div>
+    <div style="border: 1.5px solid var(--ocean); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--ocean); color: white; padding: 2.5mm 4mm; font-size: 7.5pt; font-weight: 700;">② Nature Access Policy</div>
+      <div style="padding: 3mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        「自然へのアクセス」が世界的な政策課題に。森・水・緑への接触が精神・身体健康に直結することが科学的に証明されつつある。
+        <div class="evidence-pill" style="margin-top: 2mm; display: block;">GWI Brief 2025年4月</div>
+      </div>
+    </div>
+    <div style="border: 1.5px solid var(--accent); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--accent); color: white; padding: 2.5mm 4mm; font-size: 7.5pt; font-weight: 700;">③ Social Prescribing</div>
+      <div style="padding: 3mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        「社会的処方」が世界的に急拡大。人・自然・コミュニティとのつながりが医療的効果を持つという考え方。孤独感の解消に有効。
+        <div class="evidence-pill" style="margin-top: 2mm; display: block;">GWI Brief 2026年4月</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">科学的エビデンス（GWI Wellness Evidence Database）</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3mm;">
+    <div style="background: var(--forest-pale); border-radius: 8px; padding: 4mm;">
+      <div style="font-size: 8.5pt; font-weight: 700; color: var(--forest); margin-bottom: 2mm;">🌿 森林浴の効果（やんばるの森）</div>
+      <div style="font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+        GWI Wellness Evidenceが医学的に証明：ストレスホルモン（コルチゾール）低減・血圧低下・免疫機能向上・精神的回復。
+        やんばるの亜熱帯照葉樹林は世界的に稀少な生態系であり、この効果が最大化される環境。
+      </div>
+    </div>
+    <div style="background: var(--ocean-pale); border-radius: 8px; padding: 4mm;">
+      <div style="font-size: 8.5pt; font-weight: 700; color: var(--ocean); margin-bottom: 2mm;">🧓 社会的つながりとウェルネス</div>
+      <div style="font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+        2026年GWI研究：「サウナの健康効果は熱そのものより<strong style="color: var(--ocean);">社会的つながりと儀式的側面</strong>が同程度に重要」。おじい・おばあとの縁側ゆんたく（おしゃべり）は、まさにこの構造と同一だ。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 4: WORLD CASES ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>04　世界の先進事例</h2>
+    <span class="page-num">4 / 7</span>
+  </div>
+
+  <!-- 国別カード -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; margin-bottom: 5mm;">
+
+    <!-- タイ -->
+    <div style="border: 1.5px solid var(--ocean); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--ocean); color: white; padding: 2.5mm 4mm; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 8.5pt; font-weight: 700;">🇹🇭 タイ ― 国家戦略・最速成長</span>
+        <span style="font-size: 7pt; background: rgba(255,255,255,0.2); border-radius: 20px; padding: 0.5mm 2.5mm;">成長率 世界2位</span>
+      </div>
+      <div style="padding: 3.5mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+        政府観光庁（TAT）がウェルネスを国家観光戦略の柱に指定。GWI 2022年グローバルデータ：ウェルネス観光客は通常観光客より<strong style="color: var(--ocean);">41%多く支出</strong>することに着目（国際観光客比）。<br>
+        <strong style="color: var(--text); font-size: 7pt;">具体的な体験：</strong>スパ・ヨガ・ムエタイ・スティームサウナ・水圧マッサージ・カヤック。プーケット/クラビで「ウェルケーション」拠点を整備。科学的エビデンス＋伝統医療を組み合わせた15種のリトリートプログラム（チバソム）。
+      </div>
+    </div>
+
+    <!-- コスタリカ -->
+    <div style="border: 2px solid var(--forest); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--forest); color: white; padding: 2.5mm 4mm; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 8.5pt; font-weight: 700;">🇨🇷 コスタリカ ― 再生型の世界モデル</span>
+        <span style="font-size: 7pt; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 0.5mm 2.5mm;">やんばると最近似</span>
+      </div>
+      <div style="padding: 3.5mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+        エコツーリズムの先進国から<strong style="color: var(--forest);">「再生型ウェルネス」へ進化</strong>。国内を4テーマのウェルネスルートに整備（先祖・自然 / 再生・目的 / 本物・長寿）。<br>
+        <strong style="color: var(--text); font-size: 7pt;">具体的な体験：</strong>旅行者がマングローブ植林・ウミガメ保全活動に参加（ボランティアツーリズム）。「Costa Rica Regenerativa」が民間企業に再生型経営を指導。環境と旅行者が共に回復する設計。
+        <div style="margin-top: 2mm; background: var(--forest-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--forest); font-weight: 700;">
+          → 環境再生活動への旅行者参加という構造がやんばると同一
+        </div>
+      </div>
+    </div>
+
+    <!-- ブータン -->
+    <div style="border: 1.5px solid var(--accent); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--accent); color: white; padding: 2.5mm 4mm; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 8.5pt; font-weight: 700;">🇧🇹 ブータン ― 哲学でブランド化</span>
+        <span style="font-size: 7pt; background: rgba(255,255,255,0.2); border-radius: 20px; padding: 0.5mm 2.5mm;">GNH憲法明記</span>
+      </div>
+      <div style="padding: 3.5mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+        外国人旅行者に<strong style="color: var(--accent);">1泊100ドルの「持続可能発展税」</strong>を義務化。税収を医療・教育・森林保全に全額再投資。国土の70%が森林。<br>
+        <strong style="color: var(--text); font-size: 7pt;">哲学：</strong>「GDP成長より幸福度」という国民総幸福量（GNH）が憲法に明記（2008年）。この哲学そのものが世界的なウェルネスブランドになっている。「量より質・来る人を選ぶ」逆張り戦略。
+      </div>
+    </div>
+
+    <!-- シンガポール・フィリピン -->
+    <div style="display: flex; flex-direction: column; gap: 2.5mm;">
+      <div style="border: 1.5px solid #888; border-radius: 10px; overflow: hidden; flex: 1;">
+        <div style="background: #555; color: white; padding: 2mm 4mm; font-size: 8.5pt; font-weight: 700;">🇸🇬 シンガポール ― メンタルウェルネス特化</div>
+        <div style="padding: 3mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">
+          16の治療用庭園（自閉症・認知症・不安・ADHD向け）を開設。Marina South Coastal開発で浮遊療法・光線療法・治療的アートを統合した新ウェルネスエリアを整備中。
+        </div>
+      </div>
+      <div style="border: 1.5px solid var(--ocean); border-radius: 10px; overflow: hidden; flex: 1;">
+        <div style="background: #1a5276; color: white; padding: 2mm 4mm; font-size: 8.5pt; font-weight: 700;">🇵🇭 フィリピン ― 伝統医療×医学の統合</div>
+        <div style="padding: 3mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">
+          The Farm at San Benitoが医学的根拠＋伝統的治療＋ホリスティックウェルネスを組み合わせた術後回復プログラムでアジア屈指の評価。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 日本の現状 -->
+  <div class="section-title">日本の現状 ― チャンスとギャップ</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin-bottom: 4mm;">
+    <div style="background: #f5f5f5; border-radius: 8px; padding: 3.5mm 4mm; font-size: 7.5pt; color: #888; line-height: 1.7;">
+      <div style="font-weight: 700; color: #666; margin-bottom: 1.5mm;">現状</div>
+      観光庁がウェルネスツーリズムをインバウンド戦略に位置づけ始めた段階。温泉・スパ中心の「受動的」体験が主流。長野・沖縄北部（キタナカ）などが先行事例として動き始めている。GWIの国別データでは日本はアーカイブ扱い。
+    </div>
+    <div style="background: var(--forest-pale); border-radius: 8px; padding: 3.5mm 4mm; font-size: 7.5pt; color: var(--forest); line-height: 1.7;">
+      <div style="font-weight: 700; margin-bottom: 1.5mm;">チャンス</div>
+      Bloomberg・FT・NYTが「日本は世界トップクラスのウェルネス市場」と報道済み。ただし<strong>「受け手」から「発信地」への転換が遅れている</strong>。やんばるが再生型ウェルネスの旗手として先に動けば、日本全体の文脈を変えられる。
+    </div>
+  </div>
+
+  <!-- やんばるとの対比 -->
+  <div class="section-title">世界の先進事例と、やんばるが持つもの</div>
+  <div style="overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 7pt;">
+      <thead>
+        <tr style="background: var(--forest); color: white;">
+          <th style="padding: 2mm 3mm; text-align: left; font-weight: 700;">国・地域</th>
+          <th style="padding: 2mm 3mm; text-align: left; font-weight: 700;">強みの軸</th>
+          <th style="padding: 2mm 3mm; text-align: left; font-weight: 700;">やんばるに対応するもの</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: var(--forest-pale);">
+          <td style="padding: 2mm 3mm; font-weight: 700; color: var(--forest);">コスタリカ</td>
+          <td style="padding: 2mm 3mm; color: var(--text-muted);">再生型・自然への旅行者参加</td>
+          <td style="padding: 2mm 3mm; color: var(--forest); font-weight: 700;">環境再生活動（水脈・草木・海岸）への参加</td>
+        </tr>
+        <tr style="background: white;">
+          <td style="padding: 2mm 3mm; font-weight: 700; color: var(--accent);">ブータン</td>
+          <td style="padding: 2mm 3mm; color: var(--text-muted);">哲学的ブランド・量より質</td>
+          <td style="padding: 2mm 3mm; color: var(--accent); font-weight: 700;">逆格差論・「貧しき豊かさ」という300年の思想</td>
+        </tr>
+        <tr style="background: var(--forest-pale);">
+          <td style="padding: 2mm 3mm; font-weight: 700; color: var(--ocean);">シンガポール</td>
+          <td style="padding: 2mm 3mm; color: var(--text-muted);">社会的つながり・メンタル回復</td>
+          <td style="padding: 2mm 3mm; color: var(--ocean); font-weight: 700;">ゆんたく・集落・おじい・おばあとのつながり</td>
+        </tr>
+        <tr style="background: white;">
+          <td style="padding: 2mm 3mm; font-weight: 700; color: #1a5276;">フィリピン</td>
+          <td style="padding: 2mm 3mm; color: var(--text-muted);">伝統医療×科学的根拠</td>
+          <td style="padding: 2mm 3mm; color: #1a5276; font-weight: 700;">琉球の薬草文化・食・長寿（大宜味村「長寿の里」）</td>
+        </tr>
+        <tr style="background: var(--forest-pale);">
+          <td style="padding: 2mm 3mm; font-weight: 700; color: var(--ocean);">タイ</td>
+          <td style="padding: 2mm 3mm; color: var(--text-muted);">政府主導・消費額最大化</td>
+          <td style="padding: 2mm 3mm; color: var(--ocean); font-weight: 700;">今帰仁ちゅーなー（村公認ガイド制度）がその入口</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ======================== PAGE 5: YANBARU ASSETS ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>04　やんばるの固有資産</h2>
+    <span class="page-num">5 / 7</span>
+  </div>
+
+  <div style="background: linear-gradient(135deg, #0d3b2e, #1a4a3a); border-radius: 10px; padding: 4mm 6mm; color: white; margin-bottom: 5mm; text-align: center;">
+    <div style="font-size: 9pt; color: rgba(255,255,255,0.7); margin-bottom: 2mm;">世界水準で見たとき、やんばるは何を持っているか</div>
+    <div style="font-size: 11pt; font-weight: 700; color: #7de8c8;">世界自然遺産 × 世界文化遺産 × 長寿文化 × 農業 × 独自のウェルネスプログラム</div>
+    <div style="font-size: 7.5pt; color: rgba(255,255,255,0.6); margin-top: 2mm;">これが1エリアに集中しているのは、世界的に見ても稀である</div>
+  </div>
+
+  <div class="asset-grid" style="margin-bottom: 5mm;">
+    <div class="asset-card">
+      <div class="asset-head">🌿 世界自然遺産（2021年）</div>
+      <div class="asset-body">
+        「奄美大島、徳之島、沖縄島北部及び西表島」としてユネスコ登録。登録面積7,721ヘクタール。<br>
+        <strong>亜熱帯照葉樹林</strong>（世界的稀少）が広がり、面積の75%以上が山・森。<br>
+        ヤンバルクイナ（日本唯一の飛べない鳥）・ノグチゲラ・ヤンバルテナガコガネなど固有種が多数。<br>
+        → 森林浴の科学的効果を最大限に引き出せる、世界が認めた自然環境。
+      </div>
+    </div>
+    <div class="asset-card" style="border-color: var(--ocean);">
+      <div class="asset-head" style="background: var(--ocean);">🏰 世界文化遺産（2000年）</div>
+      <div class="asset-body">
+        今帰仁城跡が「琉球王国のグスク及び関連遺産群」として登録。<br>
+        琉球統一前・三山時代（14〜15世紀）の北山王の居城。<br>
+        地形を活かした曲線の石垣（布積み）と御嶽（聖地）が共存。<br>
+        → 歴史・文化・精神性という<strong style="color: var(--ocean);">ウェルネスの「精神領域」</strong>を支える資源。
+      </div>
+    </div>
+    <div class="asset-card" style="border-color: var(--accent);">
+      <div class="asset-head" style="background: var(--accent);">🧓 長寿・食文化</div>
+      <div class="asset-body">
+        大宜味村「長寿の里」。シークヮーサー栽培で有名。<br>
+        沖縄女性の平均寿命：<strong style="color: var(--accent);">87.88年（2020年都道府県別生命表）</strong>。かつて全国1位、長寿文化の蓄積は今も地域の核。<br>
+        今帰仁スイカ・今帰仁マンゴー・サトウキビ・花き。<br>
+        → 琉球の「食がウェルネス」という生き方そのものが、伝統医療セクターと接続する資源。
+      </div>
+    </div>
+    <div class="asset-card">
+      <div class="asset-head">✨ 今帰仁ちゅーなー（2024年〜）</div>
+      <div class="asset-body">
+        今帰仁村観光協会が2024年12月に公式リリース済みのウェルネスプログラム。<br>
+        村公認ウェルネスガイド「今帰仁ちゅーなー」を独自認定（第1期25名）。<br>
+        森のセラピー・海のセラピー（各16,500円/2時間）。対象：企業・団体の福利厚生・研修。<br>
+        → <strong>ウェルネスの「現場」がすでに動いている</strong>。ネットワークが接続する土台がある。
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">やんばる北部4村の多様性</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2mm;">
+    <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.6;">
+      <div style="font-weight: 700; color: var(--forest); margin-bottom: 1mm;">国頭村</div>
+      「森と水とやすらぎの里」。村域の84%が森林。世界自然遺産の核心。
+    </div>
+    <div style="background: var(--ocean-pale); border-radius: 8px; padding: 3mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.6;">
+      <div style="font-weight: 700; color: var(--ocean); margin-bottom: 1mm;">大宜味村</div>
+      「長寿の里」。シークヮーサーと長寿文化。伝統医療×ウェルネス食の宝庫。
+    </div>
+    <div style="background: var(--sand); border-radius: 8px; padding: 3mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.6; border: 1px solid var(--sand-dark);">
+      <div style="font-weight: 700; color: var(--accent); margin-bottom: 1mm;">東村</div>
+      「花と水とパインの村」。パイン生産日本一。農業体験の拠点。
+    </div>
+    <div style="background: linear-gradient(135deg, var(--forest-pale), var(--ocean-pale)); border-radius: 8px; padding: 3mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.6; border: 1.5px solid var(--forest);">
+      <div style="font-weight: 700; color: var(--forest); margin-bottom: 1mm;">今帰仁村</div>
+      世界文化遺産＋ウェルネスプログラム始動済み。2つの世界遺産が集中する唯一の村。
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 5: WHY YANBARU ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>05　やんばるにしかできない理由</h2>
+    <span class="page-num">6 / 7</span>
+  </div>
+
+  <div class="section-title">逆格差論が示すこと ― やんばるの「弱さ」は実は「強さ」だ</div>
+  <div style="background: linear-gradient(135deg, #0d3b2e, #1a4a3a); border-radius: 10px; padding: 5mm 7mm; color: white; margin-bottom: 5mm;">
+    <div style="font-size: 8pt; color: var(--ocean-light); font-weight: 700; letter-spacing: 0.1em; margin-bottom: 3mm;">逆格差論（名護市基本構想・1970年代）</div>
+    <div style="font-size: 9pt; font-family: 'Noto Serif JP', serif; line-height: 1.9; color: rgba(255,255,255,0.92); border-left: 3px solid var(--ocean-light); padding-left: 4mm; margin-bottom: 3mm;">
+      「所得格差論の本質とは、農村から都市への安価な工業労働力転出論であり、<br>中央から地方への産業公害輸出論」
+    </div>
+    <div style="font-size: 8pt; color: rgba(255,255,255,0.8); line-height: 1.7;">
+      開発・工業化による「格差是正」を拒否し、<strong style="color: #7de8c8;">「貧しき豊かさ」</strong>を掲げた名護市の思想。<br>
+      やんばるには本土にない本物の豊かさがある。これは遅れではなく、世界が今求めているものだ。
+    </div>
+  </div>
+
+  <div class="section-title">「弱さ」と思われていたものが、ウェルネス文脈では「強み」になる</div>
+  <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 3mm; align-items: stretch; margin-bottom: 5mm;">
+    <div style="display: flex; flex-direction: column; gap: 2mm;">
+      <div style="background: #f5f5f5; border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: #888; line-height: 1.6;">
+        <strong style="display: block; color: #999; margin-bottom: 1mm;">「人口が少ない・過疎化」</strong>
+        開発論では弱点とされる
+      </div>
+      <div style="background: #f5f5f5; border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: #888; line-height: 1.6;">
+        <strong style="display: block; color: #999; margin-bottom: 1mm;">「工場・産業がない」</strong>
+        経済的「遅れ」とみなされる
+      </div>
+      <div style="background: #f5f5f5; border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: #888; line-height: 1.6;">
+        <strong style="display: block; color: #999; margin-bottom: 1mm;">「交通が不便」</strong>
+        アクセスの「悪さ」とされる
+      </div>
+      <div style="background: #f5f5f5; border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: #888; line-height: 1.6;">
+        <strong style="display: block; color: #999; margin-bottom: 1mm;">「おじい・おばあが多い」</strong>
+        高齢化の「課題」とされる
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; font-size: 18pt; color: var(--accent); font-weight: 900;">→</div>
+    <div style="display: flex; flex-direction: column; gap: 2mm;">
+      <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--forest); line-height: 1.6;">
+        <strong style="display: block; margin-bottom: 1mm;">「静けさ・非密集・自然との近さ」</strong>
+        都市疲れした人が最も求めるウェルネス環境
+      </div>
+      <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--forest); line-height: 1.6;">
+        <strong style="display: block; margin-bottom: 1mm;">「世界自然遺産・世界文化遺産がある」</strong>
+        本物の自然・文化という最高のウェルネス資源
+      </div>
+      <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--forest); line-height: 1.6;">
+        <strong style="display: block; margin-bottom: 1mm;">「日常から切り離された場所」</strong>
+        デジタルデトックス・深い回復に最適
+      </div>
+      <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--forest); line-height: 1.6;">
+        <strong style="display: block; margin-bottom: 1mm;">「土地の記憶の継承者・生きた知恵」</strong>
+        Social Prescribingの科学が証明するつながりの効果
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">やんばるローカルネットワークが果たす役割</div>
+  <div class="flow-row" style="justify-content: center;">
+    <div class="flow-node">世界の潮流<br><span style="font-size: 6.5pt; font-weight: 400; color: var(--text-muted);">再生型ウェルネス</span></div>
+    <div class="flow-arrow">×</div>
+    <div class="flow-node">やんばるの資産<br><span style="font-size: 6.5pt; font-weight: 400; color: var(--text-muted);">自然・文化・人</span></div>
+    <div class="flow-arrow">×</div>
+    <div class="flow-node">ローカルネットワーク<br><span style="font-size: 6.5pt; font-weight: 400; color: var(--text-muted);">接続・循環・蓄積</span></div>
+    <div class="flow-arrow">=</div>
+    <div class="flow-node" style="background: linear-gradient(135deg, var(--forest), var(--ocean)); color: white; border-color: var(--forest);">
+      やんばるモデル<br><span style="font-size: 6.5pt; font-weight: 400; color: rgba(255,255,255,0.7);">日本発・世界へ</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 4mm; background: var(--sand); border: 1.5px solid var(--sand-dark); border-radius: 10px; padding: 4mm 6mm;">
+    <div style="font-size: 8.5pt; font-weight: 700; color: var(--forest); margin-bottom: 2mm;">今、取り組む意義</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+      <div>
+        <strong style="color: var(--forest); display: block; margin-bottom: 1mm;">① 市場が今、動いている</strong>
+        6.8兆ドル → 9.8兆ドル。先に動いた地域が「定義者」になれる。
+      </div>
+      <div>
+        <strong style="color: var(--forest); display: block; margin-bottom: 1mm;">② 資産はすでにある</strong>
+        世界遺産・長寿・農業・ちゅーなー。作るのではなく、つなぐだけでいい。
+      </div>
+      <div>
+        <strong style="color: var(--forest); display: block; margin-bottom: 1mm;">③ 思想の根拠がある</strong>
+        蔡温の抱護思想・逆格差論。300年続く問いへの、今の答えとして発信できる。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 7: ECONOMIC FORECAST ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>ウェルネスツーリズム 経済成長予測</h2>
+    <span class="page-num">7 / 7</span>
+  </div>
+
+  <!-- フェーズ別成長タイムライン -->
+  <div class="section-title">フェーズ別 経済成長シナリオ</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-bottom: 5mm;">
+
+    <!-- Phase 1 -->
+    <div style="border: 1.5px solid var(--sand-dark); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--sand); padding: 3mm 4mm; border-bottom: 1px solid var(--sand-dark);">
+        <div style="font-size: 6.5pt; font-weight: 700; letter-spacing: 0.1em; color: var(--text-muted);">PHASE 1</div>
+        <div style="font-size: 9pt; font-weight: 700; color: var(--text);">2025〜2027年</div>
+        <div style="font-size: 7pt; color: var(--text-muted);">準備・実績づくり期</div>
+      </div>
+      <div style="padding: 3.5mm 4mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div style="margin-bottom: 2mm;"><span style="color: var(--forest); font-weight: 700;">ツーリスト数</span><br>年間 3,000〜8,000人</div>
+        <div style="margin-bottom: 2mm;"><span style="color: var(--forest); font-weight: 700;">観光収入</span><br><strong style="font-size: 9pt; color: var(--text);">¥4〜12億</strong>/年</div>
+        <div style="margin-bottom: 2mm;"><span style="color: var(--forest); font-weight: 700;">雇用創出</span><br>50〜100人</div>
+        <div style="background: var(--forest-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 6.5pt; color: var(--forest);">ネットワーク構築・人材育成・モデルプログラム開発</div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div style="border: 1.5px solid var(--forest-light); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--forest); padding: 3mm 4mm;">
+        <div style="font-size: 6.5pt; font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.6);">PHASE 2</div>
+        <div style="font-size: 9pt; font-weight: 700; color: white;">2028〜2031年</div>
+        <div style="font-size: 7pt; color: rgba(255,255,255,0.7);">国内定着・法人需要期</div>
+      </div>
+      <div style="padding: 3.5mm 4mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div style="margin-bottom: 2mm;"><span style="color: var(--forest); font-weight: 700;">ツーリスト数</span><br>年間 10,000〜20,000人</div>
+        <div style="margin-bottom: 2mm;"><span style="color: var(--forest); font-weight: 700;">波及効果込み収入</span><br><strong style="font-size: 9pt; color: var(--forest);">¥30〜60億</strong>/年</div>
+        <div style="margin-bottom: 2mm;"><span style="color: var(--forest); font-weight: 700;">雇用創出</span><br>200〜400人</div>
+        <div style="background: var(--forest-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 6.5pt; color: var(--forest);">国内富裕層・法人リトリート需要。農業6次産業化が本格始動</div>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div style="border: 1.5px solid var(--ocean); border-radius: 10px; overflow: hidden;">
+      <div style="background: linear-gradient(135deg, var(--forest) 0%, var(--ocean) 100%); padding: 3mm 4mm;">
+        <div style="font-size: 6.5pt; font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.6);">PHASE 3</div>
+        <div style="font-size: 9pt; font-weight: 700; color: white;">2032〜2037年</div>
+        <div style="font-size: 7pt; color: rgba(255,255,255,0.7);">国際モデル確立期</div>
+      </div>
+      <div style="padding: 3.5mm 4mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div style="margin-bottom: 2mm;"><span style="color: var(--ocean); font-weight: 700;">ツーリスト数</span><br>年間 25,000〜45,000人</div>
+        <div style="margin-bottom: 2mm;"><span style="color: var(--ocean); font-weight: 700;">波及効果込み収入</span><br><strong style="font-size: 9pt; color: var(--ocean);">¥100〜200億</strong>/年</div>
+        <div style="margin-bottom: 2mm;"><span style="color: var(--ocean); font-weight: 700;">雇用創出</span><br>600〜1,200人</div>
+        <div style="background: var(--ocean-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 6.5pt; color: var(--ocean);">GWIネットワーク接続・インバウンド誘致。「やんばるモデル」の国際的確立</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- シナリオ比較表 -->
+  <div class="section-title">Phase 3 成熟時 ― 3シナリオ比較</div>
+  <table style="width: 100%; border-collapse: collapse; margin-bottom: 5mm; font-size: 7.5pt;">
+    <thead>
+      <tr>
+        <th style="background: var(--sand); padding: 2mm 3mm; text-align: left; border-bottom: 2px solid var(--sand-dark); font-size: 7pt; font-weight: 700;">指標</th>
+        <th style="background: var(--sand); padding: 2mm 3mm; text-align: center; border-bottom: 2px solid var(--sand-dark); font-size: 7pt; color: var(--text-muted);">保守シナリオ</th>
+        <th style="background: var(--forest-pale); padding: 2mm 3mm; text-align: center; border-bottom: 2px solid var(--forest-light); font-size: 7pt; color: var(--forest); font-weight: 700;">中間シナリオ（想定）</th>
+        <th style="background: var(--ocean-pale); padding: 2mm 3mm; text-align: center; border-bottom: 2px solid var(--ocean); font-size: 7pt; color: var(--ocean);">楽観シナリオ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 2mm 3mm; font-weight: 700; border-bottom: 1px solid #eee;">年間ツーリスト数</td>
+        <td style="padding: 2mm 3mm; text-align: center; border-bottom: 1px solid #eee; color: var(--text-muted);">15,000人</td>
+        <td style="padding: 2mm 3mm; text-align: center; border-bottom: 1px solid var(--forest-pale); background: var(--forest-pale); font-weight: 700; color: var(--forest);">30,000人</td>
+        <td style="padding: 2mm 3mm; text-align: center; border-bottom: 1px solid var(--ocean-pale); background: var(--ocean-pale); color: var(--text-muted);">50,000人</td>
+      </tr>
+      <tr>
+        <td style="padding: 2mm 3mm; font-weight: 700; border-bottom: 1px solid #eee;">平均消費単価 <span style="font-size: 6pt; color: var(--text-muted);">※1</span></td>
+        <td style="padding: 2mm 3mm; text-align: center; border-bottom: 1px solid #eee; color: var(--text-muted);">¥180,000/人</td>
+        <td style="padding: 2mm 3mm; text-align: center; border-bottom: 1px solid var(--forest-pale); background: var(--forest-pale); font-weight: 700; color: var(--forest);">¥260,000/人</td>
+        <td style="padding: 2mm 3mm; text-align: center; border-bottom: 1px solid var(--ocean-pale); background: var(--ocean-pale); color: var(--text-muted);">¥350,000/人</td>
+      </tr>
+      <tr>
+        <td style="padding: 2mm 3mm; font-weight: 700; border-bottom: 1px solid #eee;">直接観光収入</td>
+        <td style="padding: 2mm 3mm; text-align: center; border-bottom: 1px solid #eee; color: var(--text-muted);">¥27億</td>
+        <td style="padding: 2mm 3mm; text-align: center; border-bottom: 1px solid var(--forest-pale); background: var(--forest-pale); font-weight: 700; color: var(--forest);">¥78億</td>
+        <td style="padding: 2mm 3mm; text-align: center; border-bottom: 1px solid var(--ocean-pale); background: var(--ocean-pale); color: var(--text-muted);">¥175億</td>
+      </tr>
+      <tr>
+        <td style="padding: 2mm 3mm; font-weight: 700;">波及効果込み（乗数×1.5）<span style="font-size: 6pt; color: var(--text-muted);">※2</span></td>
+        <td style="padding: 2mm 3mm; text-align: center; color: var(--text-muted);">¥41億</td>
+        <td style="padding: 2mm 3mm; text-align: center; background: var(--forest-pale); font-weight: 700; color: var(--forest);">¥117億（現状比+約150%）</td>
+        <td style="padding: 2mm 3mm; text-align: center; background: var(--ocean-pale); color: var(--text-muted);">¥262億</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 比較事例 + 成功条件 -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4mm;">
+
+    <div>
+      <div class="section-title">比較事例 ― 現実性の根拠</div>
+      <table style="width: 100%; border-collapse: collapse; font-size: 7pt;">
+        <thead>
+          <tr>
+            <th style="padding: 1.5mm 2mm; text-align: left; background: var(--sand); font-size: 6.5pt; font-weight: 700; border-bottom: 1.5px solid var(--sand-dark);">地域</th>
+            <th style="padding: 1.5mm 2mm; text-align: center; background: var(--sand); font-size: 6.5pt; font-weight: 700; border-bottom: 1.5px solid var(--sand-dark);">人口</th>
+            <th style="padding: 1.5mm 2mm; text-align: center; background: var(--sand); font-size: 6.5pt; font-weight: 700; border-bottom: 1.5px solid var(--sand-dark);">観光収入/年</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 1.5mm 2mm; border-bottom: 1px solid #eee;">ブータン（高単価モデル）</td>
+            <td style="padding: 1.5mm 2mm; text-align: center; border-bottom: 1px solid #eee; color: var(--text-muted);">73万人</td>
+            <td style="padding: 1.5mm 2mm; text-align: center; border-bottom: 1px solid #eee;">¥80〜100億 <span style="font-size: 6pt; color:var(--text-muted);">※3</span></td>
+          </tr>
+          <tr style="background: #fafafa;">
+            <td style="padding: 1.5mm 2mm; border-bottom: 1px solid #eee;">那須町（栃木）</td>
+            <td style="padding: 1.5mm 2mm; text-align: center; border-bottom: 1px solid #eee; color: var(--text-muted);">約23,000人</td>
+            <td style="padding: 1.5mm 2mm; text-align: center; border-bottom: 1px solid #eee; color: #bbb;">—</td>
+          </tr>
+          <tr>
+            <td style="padding: 1.5mm 2mm; border-bottom: 1px solid #eee;">飛騨高山市（参考）</td>
+            <td style="padding: 1.5mm 2mm; text-align: center; border-bottom: 1px solid #eee; color: var(--text-muted);">約83,000人</td>
+            <td style="padding: 1.5mm 2mm; text-align: center; border-bottom: 1px solid #eee; color: #bbb;">—</td>
+          </tr>
+          <tr style="background: var(--forest-pale);">
+            <td style="padding: 1.5mm 2mm; font-weight: 700; color: var(--forest);">やんばる北部4村（中間シナリオ）</td>
+            <td style="padding: 1.5mm 2mm; text-align: center; font-weight: 700; color: var(--forest);">約18,500人</td>
+            <td style="padding: 1.5mm 2mm; text-align: center; font-weight: 700; color: var(--forest);">¥117億</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size: 6pt; color: var(--text-muted); margin-top: 2mm; line-height: 1.7;">
+        ※1 GWI 2023調査：国内ウェルネスツーリスト平均 $673（約¥100,000）。やんばるは長期滞在・高付加価値プログラムで1.8〜3.5倍を想定。<br>
+        ※2 乗数1.5：小規模農村の域内調達率を考慮（一般的な観光地は1.5〜2.0）。<br>
+        ※3 ブータン2023年：SDF（持続可能発展税$100/人/泊）収入$26M（約¥38億）＋宿泊・食事等を含む総観光収入の推計値。<br>
+        ※4 那須町・飛騨高山の観光収入は公式統計が未確認のため非表示。
+      </div>
+    </div>
+
+    <div>
+      <div class="section-title">成長を左右する3つの条件</div>
+      <div style="display: flex; flex-direction: column; gap: 2.5mm;">
+        <div style="background: var(--forest-pale); border-left: 3px solid var(--forest); border-radius: 0 8px 8px 0; padding: 3mm 4mm;">
+          <div style="font-size: 8pt; font-weight: 700; color: var(--forest);">① 宿泊施設の適切な拡充と質の制御</div>
+          <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.6; margin-top: 1mm;">Phase 3実現には現状の3倍（約300室）への段階的拡充が前提。ただし大型リゾートでなく小規模・高単価の分散型を維持する。1人あたりの質を上げるほど、環境負荷は下がり収益は上がる。</div>
+        </div>
+        <div style="background: var(--ocean-pale); border-left: 3px solid var(--ocean); border-radius: 0 8px 8px 0; padding: 3mm 4mm;">
+          <div style="font-size: 8pt; font-weight: 700; color: var(--ocean);">② 環境再生との一体運営</div>
+          <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.6; margin-top: 1mm;">ウェルネスの質は環境の質と直結する。自然が壊れれば商品が壊れる。再生活動への投資がそのまま事業価値になる。</div>
+        </div>
+        <div style="background: #fff8f0; border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 3mm 4mm;">
+          <div style="font-size: 8pt; font-weight: 700; color: var(--accent);">③ 地域内経済循環の設計</div>
+          <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.6; margin-top: 1mm;">食材・宿泊・ガイド・素材を域外に漏らさずやんばる内で回す。経済的自立が地域の持続力になる。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

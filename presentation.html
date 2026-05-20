@@ -529,9 +529,167 @@
   }
 
   .cta-step strong { display: block; font-size: 9pt; margin-bottom: 1mm; }
+
+  /* ===================== PAGE 2: PHILOSOPHY ===================== */
+  .philosophy-header {
+    background: linear-gradient(135deg, #0d3b2e 0%, #1a4a3a 100%);
+    border-radius: 10px;
+    padding: 6mm 8mm;
+    color: white;
+    margin-bottom: 6mm;
+  }
+
+  .philosophy-quote {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 10pt;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.92);
+    border-left: 3px solid var(--ocean-light);
+    padding-left: 5mm;
+    margin-top: 3mm;
+  }
+
+  .philosophy-quote em {
+    color: #7de8c8;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .timeline-wrap {
+    position: relative;
+    padding-left: 6mm;
+    margin-bottom: 5mm;
+  }
+
+  .timeline-wrap::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 4mm;
+    bottom: 4mm;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--forest), var(--ocean), var(--accent));
+    border-radius: 2px;
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4mm;
+    align-items: flex-start;
+    margin-bottom: 4mm;
+  }
+
+  .tl-dot {
+    width: 8mm;
+    height: 8mm;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7pt;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    left: -4mm;
+    margin-top: 1mm;
+  }
+
+  .tl-body {}
+  .tl-era { font-size: 7pt; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 1mm; }
+  .tl-name { font-size: 9.5pt; font-weight: 700; color: var(--text); margin-bottom: 1.5mm; }
+  .tl-desc { font-size: 7.5pt; color: var(--text-muted); line-height: 1.7; }
+  .tl-keyword {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 0.5mm 3mm;
+    font-size: 7pt;
+    font-weight: 700;
+    margin-top: 1.5mm;
+    margin-right: 1.5mm;
+  }
+  /* ===== NAV BAR ===== */
+  .doc-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(13, 59, 46, 0.96);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    gap: 12px;
+  }
+
+  .doc-nav-brand {
+    color: rgba(255,255,255,0.4);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .doc-nav-tabs {
+    display: flex;
+    gap: 4px;
+  }
+
+  .doc-nav-tab {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+
+  .doc-nav-tab.active {
+    background: rgba(255,255,255,0.18);
+    color: white;
+  }
+
+  .doc-nav-tab:not(.active) {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .doc-nav-tab:not(.active):hover {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .doc-nav-home {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    text-decoration: none;
+    color: #48cae4;
+    border: 1px solid rgba(72,202,228,0.4);
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+
+  .doc-nav-home:hover {
+    background: rgba(72,202,228,0.1);
+  }
+
+  body { padding-top: 36px; }
+
+  @media print { .doc-nav { display: none; } body { padding-top: 0; } }
 </style>
 </head>
 <body>
+
+<nav class="doc-nav">
+  <span class="doc-nav-brand">YANBARU LOCAL NETWORK</span>
+  <div class="doc-nav-tabs">
+    <a class="doc-nav-tab" href="wellness_brief.html">DOC 01　ウェルネスの意義</a>
+    <a class="doc-nav-tab active" href="presentation.html">DOC 02　ネットワーク提案</a>
+  </div>
+  <a class="doc-nav-home" href="index.html">← 資料一覧</a>
+</nav>
 
 <!-- ======================== PAGE 1: COVER ======================== -->
 <div class="page cover">
@@ -639,11 +797,134 @@
   </div>
 </div>
 
-<!-- ======================== PAGE 2: PROBLEM ======================== -->
+<!-- ======================== PAGE 2: PHILOSOPHY ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>やんばるの哲学</h2>
+    <span class="page-num">2 / 8</span>
+  </div>
+
+  <!-- 逆格差論コア -->
+  <div class="philosophy-header">
+    <div style="font-size: 8pt; font-weight: 700; color: var(--ocean-light); letter-spacing: 0.15em; margin-bottom: 3mm;">逆 格 差 論　― 名護市基本構想（1970年代）</div>
+    <div class="philosophy-quote">
+      「所得格差論の本質とは、実は<em>農村から都市への安価な工業労働力転出論</em>であり、<em>中央から地方への産業公害輸出論</em>」<br>
+      <span style="font-size: 8pt; color: rgba(255,255,255,0.6); font-family: 'Noto Sans JP', sans-serif;">― 名護市総合計画・基本構想より</span>
+    </div>
+    <div style="margin-top: 4mm; font-size: 8.5pt; color: rgba(255,255,255,0.85); line-height: 1.7;">
+      本土政府は「格差是正」を名目に工業化を沖縄に押し付けた。名護市はこれを真っ向から批判し、<br>
+      <strong style="color: #7de8c8;">「やんばるには本土にない、本物の豊かさがある」</strong>と宣言した。
+    </div>
+    <button onclick="document.getElementById('yakugyakuDetail').style.display = document.getElementById('yakugyakuDetail').style.display === 'none' ? 'block' : 'none'"
+      style="margin-top: 4mm; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.85); border-radius: 6px; padding: 2mm 4mm; font-size: 7.5pt; cursor: pointer; font-family: 'Noto Sans JP', sans-serif;">
+      ▶ この言葉の意味を詳しく読む
+    </button>
+  </div>
+
+  <!-- 逆格差論 詳細説明（クリックで開閉） -->
+  <div id="yakugyakuDetail" style="display: none; background: #f7f4ef; border: 1.5px solid var(--sand-dark); border-radius: 10px; padding: 5mm 6mm; margin-bottom: 4mm;">
+    <div style="font-size: 8.5pt; font-weight: 700; color: var(--forest); margin-bottom: 3mm; border-bottom: 1px solid var(--sand-dark); padding-bottom: 2mm;">逆格差論とは何か ― 2つの批判</div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-bottom: 3mm;">
+      <div style="background: white; border-radius: 8px; padding: 3.5mm 4mm; border-left: 3px solid var(--ocean);">
+        <div style="font-size: 7.5pt; font-weight: 700; color: var(--ocean); margin-bottom: 2mm;">① 「農村から都市への労働力転出論」</div>
+        <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+          政府は「工場を作れば雇用が生まれる」と言う。しかし実際は——やんばるの農家が農業をやめ、低賃金の工場労働者になる。農地・集落・文化は放棄され、若者が村を去る。「格差是正」の正体は、<strong>地域を安い労働力の供給地に変える</strong>政策だ。
+        </div>
+      </div>
+      <div style="background: white; border-radius: 8px; padding: 3.5mm 4mm; border-left: 3px solid var(--accent);">
+        <div style="font-size: 7.5pt; font-weight: 700; color: var(--accent); margin-bottom: 2mm;">② 「中央から地方への産業公害輸出論」</div>
+        <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+          高度経済成長期、本土は水俣病・四日市ぜんそくなど深刻な公害に直面した。本土の都市が「もう工場はいらない」となったとき、政府はその産業を沖縄に押し出した。<strong>やんばるへの工場誘致は、本土が嫌がった公害の輸出</strong>にすぎない。
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--forest); line-height: 1.7;">
+      <strong>逆格差論の答え：</strong>やんばるには世界自然遺産・世界文化遺産・長寿文化・農業・ウェルネス資源がある。これは「遅れ」ではなく<strong>本物の豊かさ</strong>だ。外からの発展モデルを拒否し、地域が自立した経済圏を持つことが本当の格差の解消になる。
+    </div>
+    <div style="text-align: right; margin-top: 2mm;">
+      <button onclick="document.getElementById('yakugyakuDetail').style.display='none'"
+        style="background: none; border: none; color: var(--text-muted); font-size: 7pt; cursor: pointer; font-family: 'Noto Sans JP', sans-serif;">▲ 閉じる</button>
+    </div>
+  </div>
+
+  <!-- 思想の系譜 -->
+  <div class="section-title">思想の系譜 ― やんばるで問われてきたこと</div>
+  <div class="timeline-wrap">
+
+    <!-- 蔡温 -->
+    <div class="tl-item">
+      <div class="tl-dot" style="background: var(--forest-pale); color: var(--forest); border: 2px solid var(--forest);">🌿</div>
+      <div class="tl-body">
+        <div class="tl-era" style="color: var(--forest);">1735年 ― 琉球王国</div>
+        <div class="tl-name">蔡温（さいおん）の抱護思想</div>
+        <div class="tl-desc">
+          三司官・蔡温は中国で風水地理学を習得し琉球に実装。山・川・森を整えれば民が豊かになるという抱護思想のもと、
+          羽地大川の水脈整備・杣山システム（風水植林）・林政八書を確立。
+          山林・農地・集落を一体的に管理し、環境と人の共生を政策として制度化した。
+        </div>
+        <span class="tl-keyword" style="background: var(--forest-pale); color: var(--forest);">抱護思想</span>
+        <span class="tl-keyword" style="background: var(--forest-pale); color: var(--forest);">水脈・林政</span>
+        <span class="tl-keyword" style="background: var(--forest-pale); color: var(--forest);">環境と人の共生</span>
+      </div>
+    </div>
+
+    <!-- 逆格差論・象設計集団 -->
+    <div class="tl-item">
+      <div class="tl-dot" style="background: var(--ocean-pale); color: var(--ocean); border: 2px solid var(--ocean);">🏛</div>
+      <div class="tl-body">
+        <div class="tl-era" style="color: var(--ocean);">1970〜80年代 ― 沖縄復帰後</div>
+        <div class="tl-name">逆格差論 × 象設計集団 × 岸本建男（名護市長）</div>
+        <div class="tl-desc">
+          復帰後の工業化圧力に対し、名護市は「貧しき豊かさ」を掲げて抵抗。
+          建築家集団・象設計集団と協働し、地域の風土・文化・コミュニティを体現した名護市庁舎（1981年）・
+          今帰仁村中央公民館を建設。「外から押し付けられた発展モデルを拒否し、地域から自立する」思想の実践。
+        </div>
+        <span class="tl-keyword" style="background: var(--ocean-pale); color: var(--ocean);">逆格差論</span>
+        <span class="tl-keyword" style="background: var(--ocean-pale); color: var(--ocean);">貧しき豊かさ</span>
+        <span class="tl-keyword" style="background: var(--ocean-pale); color: var(--ocean);">地域の自立</span>
+        <span class="tl-keyword" style="background: var(--ocean-pale); color: var(--ocean);">名護市庁舎（1981）</span>
+      </div>
+    </div>
+
+    <!-- やんばるローカルネットワーク -->
+    <div class="tl-item">
+      <div class="tl-dot" style="background: #fff8f0; color: var(--accent); border: 2px solid var(--accent);">🔗</div>
+      <div class="tl-body">
+        <div class="tl-era" style="color: var(--accent);">今 ― 2025年〜</div>
+        <div class="tl-name">やんばるローカルネットワークシステム</div>
+        <div class="tl-desc">
+          蔡温が問い、岸本が闘ったその問いは今も続く。「やんばるの豊かさを、外に売るのではなく、地域に循環させる」。
+          デジタルツールを手段として使いながら、地域の事業者・自然・文化をつなぎ直す。
+          これは新しい試みではなく、300年続く問いへの、現代の答えだ。
+        </div>
+        <span class="tl-keyword" style="background: #fff8f0; color: var(--accent);">再生型循環</span>
+        <span class="tl-keyword" style="background: #fff8f0; color: var(--accent);">地域接続インフラ</span>
+        <span class="tl-keyword" style="background: #fff8f0; color: var(--accent);">思想の継承</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 核心メッセージ -->
+  <div style="background: var(--sand); border: 1.5px solid var(--sand-dark); border-radius: 10px; padding: 4mm 6mm; display: flex; gap: 5mm; align-items: center;">
+    <div style="font-size: 22pt; flex-shrink: 0;">💡</div>
+    <div>
+      <div style="font-size: 8.5pt; font-weight: 700; color: var(--forest); margin-bottom: 1.5mm;">やんばるは「遅れた地域」ではない</div>
+      <div style="font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+        世界自然遺産・世界文化遺産・長寿文化・農業・ウェルネス ― これは格差ではなく強みだ。
+        逆格差論が言ったように、<strong>問題は外からの「発展」押し付けであり、解決策は地域の自立にある</strong>。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 3: PROBLEM ======================== -->
 <div class="page">
   <div class="page-header">
     <h2>今、何が起きているか</h2>
-    <span class="page-num">2 / 5</span>
+    <span class="page-num">3 / 8</span>
   </div>
 
   <div class="section-title">やんばるが抱える構造課題</div>
@@ -794,7 +1075,7 @@
 <div class="page">
   <div class="page-header">
     <h2>仕組みはシンプル</h2>
-    <span class="page-num">3 / 5</span>
+    <span class="page-num">4 / 8</span>
   </div>
 
   <div class="flow-container">
@@ -879,7 +1160,7 @@
 <div class="page">
   <div class="page-header">
     <h2>ローカル経済圏ができると、何が起きるか</h2>
-    <span class="page-num">4 / 5</span>
+    <span class="page-num">5 / 8</span>
   </div>
 
   <!-- 経済の変化 -->
@@ -983,11 +1264,329 @@
   </div>
 </div>
 
-<!-- ======================== PAGE 5: MVP + CTA ======================== -->
+<!-- ======================== PAGE 5: WELLNESS TOURISM ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>再生型ウェルネスツーリズム</h2>
+    <span class="page-num">6 / 8</span>
+  </div>
+
+  <!-- やんばるの環境課題 -->
+  <div class="section-title">やんばるが抱える環境課題 ― 再生が必要な理由</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5mm; margin-bottom: 4mm;">
+    <div style="border: 1.5px solid #c0392b; border-radius: 8px; overflow: hidden;">
+      <div style="background: #c0392b; color: white; font-size: 7.5pt; font-weight: 700; padding: 2mm 3.5mm;">🟥 赤土流出</div>
+      <div style="padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">
+        農地・工事現場から赤土が流出し続ける。雨の侵食力は<strong style="color:#c0392b;">全国平均の3倍</strong>。沿岸サンゴ礁の<strong style="color:#c0392b;">約半数</strong>が土砂で汚染。モズク・アーサの養殖業も打撃を受ける。<br>
+        <span style="color:#c0392b; font-weight:700;">→ 土が崩れ、海が濁る</span>
+      </div>
+    </div>
+    <div style="border: 1.5px solid #7f8c8d; border-radius: 8px; overflow: hidden;">
+      <div style="background: #7f8c8d; color: white; font-size: 7.5pt; font-weight: 700; padding: 2mm 3.5mm;">⬛ 水脈・空気脈の遮断</div>
+      <div style="padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">
+        道路・護岸のコンクリートが大地に「フタ」をし、水と空気の流れを断ち切る。雨水が土中に浸まず一気に流出し、地下水が涸れ、大地の生命力が落ちる。<br>
+        <span style="color:#7f8c8d; font-weight:700;">→ 大地が呼吸不全になる</span>
+      </div>
+    </div>
+    <div style="border: 1.5px solid var(--ocean); border-radius: 8px; overflow: hidden;">
+      <div style="background: var(--ocean); color: white; font-size: 7.5pt; font-weight: 700; padding: 2mm 3.5mm;">🌊 サンゴ礁の崩壊</div>
+      <div style="padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">
+        2024年、沖縄本島浅瀬の<strong style="color:var(--ocean);">9割が死滅</strong>。高水温＋赤土堆積が複合的に打撃。サンゴ礁は約9万種が依存する生態系。漁業・観光・食文化への波及は計り知れない。<br>
+        <span style="color:var(--ocean); font-weight:700;">→ 海の生態系が崩壊する</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 課題→再生活動→ウェルネス体験 の対応表 -->
+  <div class="section-title">課題に向き合う活動が、そのままウェルネス体験になる</div>
+  <div style="margin-bottom: 4mm;">
+    <!-- ヘッダー -->
+    <div style="display: grid; grid-template-columns: 2.5fr 3fr 3fr; gap: 0; margin-bottom: 1.5mm;">
+      <div style="font-size: 7pt; font-weight: 700; color: #999; padding: 0 2mm;">環境課題</div>
+      <div style="font-size: 7pt; font-weight: 700; color: var(--forest); padding: 0 2mm; border-left: 2px solid var(--forest-pale);">再生活動（大地の再生・有機土木）</div>
+      <div style="font-size: 7pt; font-weight: 700; color: var(--ocean); padding: 0 2mm; border-left: 2px solid var(--ocean-pale);">ウェルネス体験として</div>
+    </div>
+    <!-- 行1 -->
+    <div style="display: grid; grid-template-columns: 2.5fr 3fr 3fr; gap: 0; background: var(--forest-pale); border-radius: 6px 6px 0 0; margin-bottom: 1.5px;">
+      <div style="padding: 2.5mm 3mm; font-size: 7.5pt; font-weight: 700; color: #c0392b;">🟥 赤土流出・土壌流亡</div>
+      <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6; border-left: 2px solid white;">点穴・水脈溝を掘り通気浸透を回復。グランドカバー・草木の根で土をつなぎ止める。炭・有機物を入れ腐植層を育てる。</div>
+      <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--forest); font-weight: 700; line-height: 1.6; border-left: 2px solid white;">土を読み、手で掘る。五感が研ぎ澄まされ、頭が静かになる。土中の微生物がセロトニン分泌を促すことも科学的に示されている。</div>
+    </div>
+    <!-- 行2 -->
+    <div style="display: grid; grid-template-columns: 2.5fr 3fr 3fr; gap: 0; background: #f5f5f5; margin-bottom: 1.5px;">
+      <div style="padding: 2.5mm 3mm; font-size: 7.5pt; font-weight: 700; color: #555;">⬛ 水脈・空気脈の遮断</div>
+      <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6; border-left: 2px solid #ddd;">風の草刈り（刈りすぎない高刈り）で光と風を通す。抵抗柵・枝葉のフィルターで水の流れを整える。護岸の植生を回復させる。</div>
+      <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--forest); font-weight: 700; line-height: 1.6; border-left: 2px solid #ddd;">全身を使う身体労働。目に見える「前後の変化」が達成感と充実感をうむ。自然のリズムに乗る感覚＝フロー状態。</div>
+    </div>
+    <!-- 行3 -->
+    <div style="display: grid; grid-template-columns: 2.5fr 3fr 3fr; gap: 0; background: var(--ocean-pale); border-radius: 0 0 6px 6px;">
+      <div style="padding: 2.5mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--ocean);">🌊 海岸・海の生態系崩壊</div>
+      <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6; border-left: 2px solid white;">海岸・水辺の清掃・植生回復。上流の水脈整備で赤土流出を減らし、間接的に海を守る。</div>
+      <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--ocean); font-weight: 700; line-height: 1.6; border-left: 2px solid white;">潮・波・生き物のリズムと同調する体験。海と人がつながっている感覚。「与える側」になれる充実。</div>
+    </div>
+  </div>
+
+  <!-- 3層構造 + おじい・おばあ（横並び） -->
+  <div style="display: grid; grid-template-columns: 1fr auto; gap: 4mm; margin-bottom: 4mm; align-items: stretch;">
+    <div>
+      <div class="section-title">再生型ウェルネスの3層構造</div>
+      <div style="display: grid; grid-template-columns: 3px 1fr; gap: 0; margin-top: 2mm;">
+        <div style="background: var(--forest); border-radius: 3px 0 0 0;"></div>
+        <div style="background: var(--forest-pale); border-radius: 0 6px 0 0; padding: 2.5mm 4mm; margin-bottom: 1mm;">
+          <div style="font-size: 8pt; font-weight: 700; color: var(--forest);">① 環境再生 ― 自然の生命力を回復させる</div>
+          <div style="font-size: 7pt; color: var(--text-muted); margin-top: 0.5mm;">水・土・草木の流れを整え、やんばる本来のポテンシャルを引き出す</div>
+        </div>
+        <div style="background: var(--ocean);"></div>
+        <div style="background: var(--ocean-pale); padding: 2.5mm 4mm; margin-bottom: 1mm;">
+          <div style="font-size: 8pt; font-weight: 700; color: var(--ocean);">② 恵みの享受 ― 再生された自然が人を癒す</div>
+          <div style="font-size: 7pt; color: var(--text-muted); margin-top: 0.5mm;">清流・豊かな森・土の食・静寂が、本物のウェルネスをうむ</div>
+        </div>
+        <div style="background: var(--accent); border-radius: 0 0 0 3px;"></div>
+        <div style="background: #fff8f0; border-radius: 0 0 6px 0; padding: 2.5mm 4mm;">
+          <div style="font-size: 8pt; font-weight: 700; color: var(--accent);">③ 活動参加 ― 再生活動がウェルネス体験になる</div>
+          <div style="font-size: 7pt; color: var(--text-muted); margin-top: 0.5mm;">旅行者が「与える側」になることで、深い充実と癒しがうまれる</div>
+        </div>
+      </div>
+    </div>
+    <div style="background: var(--sand); border: 1.5px solid var(--sand-dark); border-radius: 10px; padding: 3.5mm 4mm; width: 52mm; display: flex; flex-direction: column; gap: 2mm;">
+      <div style="font-size: 22pt; line-height: 1; text-align: center;">🧓</div>
+      <div style="font-size: 8pt; font-weight: 700; color: var(--forest); text-align: center;">おじい・おばあ<br>土地の記憶の継承者</div>
+      <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        やんばるの自然が「本来どうだったか」を知るのは彼らだけ。環境再生の<strong style="color:var(--forest);">基準点</strong>であり、生きた知恵の源。縁側でのゆんたくは、最もシンプルなウェルネス体験でもある。
+      </div>
+    </div>
+  </div>
+
+  <!-- ネットワークとの接続 -->
+  <div style="background: var(--forest-pale); border: 1.5px solid var(--forest); border-radius: 10px; padding: 3.5mm 5mm;">
+    <div style="font-size: 8pt; font-weight: 700; color: var(--forest); margin-bottom: 2mm;">🔗 ローカルネットワークとの接続</div>
+    <div style="display: flex; align-items: center; gap: 2mm; font-size: 7pt; color: var(--forest); font-weight: 700; flex-wrap: wrap;">
+      <span style="background: white; border: 1px solid var(--forest); border-radius: 6px; padding: 1.5mm 2.5mm; text-align:center;">チェックイン<br>ヒアリング<br><span style="font-size: 6pt; font-weight: 400; color: var(--text-muted);">疲労・目的・志向</span></span>
+      <span style="color: var(--accent); font-size: 11pt;">→</span>
+      <span style="background: white; border: 1px solid var(--forest); border-radius: 6px; padding: 1.5mm 2.5mm; text-align:center;">再生型体験<br>を提案<br><span style="font-size: 6pt; font-weight: 400; color: var(--text-muted);">課題の現場へ</span></span>
+      <span style="color: var(--accent); font-size: 11pt;">→</span>
+      <span style="background: white; border: 1px solid var(--forest); border-radius: 6px; padding: 1.5mm 2.5mm; text-align:center;">自然と人が<br>同時に回復<br><span style="font-size: 6pt; font-weight: 400; color: var(--text-muted);">環境再生×ウェルネス</span></span>
+      <span style="color: var(--accent); font-size: 11pt;">→</span>
+      <span style="background: var(--forest); color: white; border-radius: 6px; padding: 1.5mm 2.5mm; text-align:center;">ログ蓄積<br>地域が進化<br><span style="font-size: 6pt; font-weight: 400; color: rgba(255,255,255,0.7);">やんばるモデルへ</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 7: NETWORK EFFECT ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>ローカルネットワーク × ウェルネスツーリズム</h2>
+    <span class="page-num">7 / 8</span>
+  </div>
+
+  <!-- Key premise -->
+  <div style="background: linear-gradient(135deg, #0d3b2e 0%, #1a6b8a 100%); border-radius: 10px; padding: 3.5mm 6mm; color: white; margin-bottom: 4mm; text-align: center;">
+    <div style="font-size: 7pt; color: rgba(255,255,255,0.55); letter-spacing: 0.12em; margin-bottom: 1mm;">NETWORK AMPLIFICATION</div>
+    <div style="font-family: 'Noto Serif JP', serif; font-size: 11pt; font-weight: 700;">ローカルネットワークはウェルネスツーリズムの経済効果を<span style="color: #7de8c8;">約1.6倍</span>にし、各事業者の費用を<span style="color: #7de8c8;">年商の8〜12%</span>削減するインフラである</div>
+  </div>
+
+  <!-- 2カラム：収益増加 ＋ 経費削減 -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-bottom: 4mm;">
+
+    <!-- 左：収益増加の3メカニズム -->
+    <div>
+      <div class="section-title">収益増加の3メカニズム</div>
+      <div style="display: flex; flex-direction: column; gap: 2mm;">
+        <div style="border: 1.5px solid var(--forest-light); border-radius: 8px; overflow: hidden;">
+          <div style="background: var(--forest-pale); padding: 2mm 3mm; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 7pt; font-weight: 700; color: var(--forest);">① 域内循環率の向上</span>
+            <span style="font-size: 9pt; font-weight: 700; color: var(--forest);">乗数 1.5 → 1.8</span>
+          </div>
+          <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">農家・宿・体験・飲食が接続 → 消費がやんばる内で循環。OTAや県外業者への経済漏洩を防ぎ域内調達率が上がる。</div>
+        </div>
+        <div style="border: 1.5px solid var(--ocean); border-radius: 8px; overflow: hidden;">
+          <div style="background: var(--ocean-pale); padding: 2mm 3mm; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 7pt; font-weight: 700; color: var(--ocean);">② クロスセル効果</span>
+            <span style="font-size: 9pt; font-weight: 700; color: var(--ocean);">消費単価 +25%</span>
+          </div>
+          <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">宿泊だけ → 農場＋食事＋環境再生体験＋手土産へ。ネットワークが次の体験を提案し1人が複数事業者を回る。</div>
+        </div>
+        <div style="border: 1.5px solid var(--accent); border-radius: 8px; overflow: hidden;">
+          <div style="background: #fff8f0; padding: 2mm 3mm; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 7pt; font-weight: 700; color: var(--accent);">③ 需要拡大・平準化</span>
+            <span style="font-size: 9pt; font-weight: 700; color: var(--accent);">来訪者 +10〜15%</span>
+          </div>
+          <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">法人リトリート一括受付。リピーター管理・再訪促進。閑散期の需要を平準化し年間稼働率を向上。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右：経費削減効果 -->
+    <div>
+      <div class="section-title">経費削減効果（各事業者の視点）</div>
+      <div style="display: flex; flex-direction: column; gap: 2mm;">
+        <div style="border: 1.5px solid #8e44ad; border-radius: 8px; overflow: hidden;">
+          <div style="background: #f3e8ff; padding: 2mm 3mm; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 7pt; font-weight: 700; color: #8e44ad;">① OTA・予約サイト手数料</span>
+            <span style="font-size: 9pt; font-weight: 700; color: #8e44ad;">実質15〜20% → 約8%</span>
+          </div>
+          <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">ネット経由の直接予約が増えOTA依存率が低下。予約の40〜50%をネット直接予約に切り替えることで手数料率が実質8%前後に。</div>
+        </div>
+        <div style="border: 1.5px solid #e67e22; border-radius: 8px; overflow: hidden;">
+          <div style="background: #fef3e2; padding: 2mm 3mm; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 7pt; font-weight: 700; color: #e67e22;">② 集客・広告費の分担</span>
+            <span style="font-size: 9pt; font-weight: 700; color: #e67e22;">個別費用 1/3〜1/5に</span>
+          </div>
+          <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">SNS・ウェブ・旅行メディアへの広告をネットワーク全体で共同出稿。単独ではリーチできない富裕層・海外客にも届く。</div>
+        </div>
+        <div style="border: 1.5px solid #27ae60; border-radius: 8px; overflow: hidden;">
+          <div style="background: #eafaf1; padding: 2mm 3mm; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 7pt; font-weight: 700; color: #27ae60;">③ 業務効率化</span>
+            <span style="font-size: 9pt; font-weight: 700; color: #27ae60;">対応工数 −20〜30%</span>
+          </div>
+          <div style="padding: 2.5mm 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.6;">予約・問い合わせ・ヒアリングを一元管理。ダブルブッキング防止・空室共有・チェックイン情報自動化で少人数運営でも回せる。</div>
+        </div>
+      </div>
+      <div style="background: linear-gradient(135deg, rgba(142,68,173,0.08) 0%, rgba(230,126,34,0.08) 100%); border: 1.5px solid #c39bd3; border-radius: 8px; padding: 2.5mm 3mm; margin-top: 2mm; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-size: 7pt; color: var(--text-muted);">合計削減効果（年商¥3,000万の事業者）</div>
+        <div style="font-size: 9pt; font-weight: 700; color: #6c3483;">年間 <span style="font-size: 11pt;">¥250〜360万</span> 削減</div>
+      </div>
+      <div style="font-size: 6pt; color: var(--text-muted); margin-top: 1.5mm; line-height: 1.5;">※ OTA手数料差分×移行率＋共同広告費分担＋業務効率化で年商の8〜12%相当を削減と推計。</div>
+    </div>
+  </div>
+
+  <!-- 現状 → ウェルネス単体 → ×ネット の3段階比較 -->
+  <div class="section-title">現状のやんばる観光 → ウェルネスツーリズム × ネットワーク（中間シナリオ）</div>
+  <div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 0; align-items: stretch; margin-bottom: 4mm; border: 1.5px solid #ddd; border-radius: 10px; overflow: hidden; font-size: 7pt;">
+    <div style="background: #f5f5f5; padding: 3mm 4mm;">
+      <div style="font-size: 6pt; font-weight: 700; color: #999; letter-spacing: 0.1em; margin-bottom: 2mm;">現状のやんばる観光</div>
+      <div style="display: flex; flex-direction: column; gap: 1.5mm; color: var(--text-muted); font-size: 7pt;">
+        <div><span style="color: #999;">来訪者</span> 数万〜10万人規模 <span style="font-size: 6pt; color: #aaa;">※</span></div>
+        <div><span style="color: #999;">消費単価</span> <span style="color: #c0392b; font-size: 6.5pt;">公式統計なし</span></div>
+        <div><span style="color: #999;">地域波及</span> <span style="color: #c0392b; font-size: 6.5pt;">公式統計なし</span></div>
+        <div style="margin-top: 1.5mm; font-size: 6pt; background: #e8e8e8; border-radius: 4px; padding: 1.5mm 2mm; color: #666; line-height: 1.6;">那覇から1.5〜2時間。宿泊型が中心だが体験・飲食コンテンツ不足で消費は宿泊費に偏る。経済循環が計測されていない。</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; background: #eee; padding: 0 3mm; font-size: 14pt; color: var(--accent); font-weight: 700;">→</div>
+    <div style="background: var(--forest-pale); padding: 3mm 4mm;">
+      <div style="font-size: 6pt; font-weight: 700; color: var(--forest); letter-spacing: 0.1em; margin-bottom: 2mm;">ウェルネス単体（中間）</div>
+      <div style="display: flex; flex-direction: column; gap: 1.5mm; color: var(--text-muted);">
+        <div><span style="color: var(--forest);">来訪者</span> 3万人（滞在型）</div>
+        <div><span style="color: var(--forest);">消費単価</span> ¥260,000/人</div>
+        <div><span style="color: var(--forest);">地域波及</span> <strong style="color: var(--forest);">¥117億</strong></div>
+        <div><span style="color: var(--forest);">滞在形態</span> 平均3〜5泊</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; background: var(--forest-pale); padding: 0 3mm; font-size: 14pt; color: var(--accent); font-weight: 700;">×</div>
+    <div style="background: linear-gradient(135deg, var(--forest-pale) 0%, var(--ocean-pale) 100%); padding: 3mm 4mm; border-left: 3px solid var(--forest);">
+      <div style="font-size: 6pt; font-weight: 700; color: var(--ocean); letter-spacing: 0.1em; margin-bottom: 2mm;">ウェルネス × ネットワーク</div>
+      <div style="display: flex; flex-direction: column; gap: 1.5mm; color: var(--text-muted);">
+        <div><span style="color: var(--ocean);">来訪者</span> 3.3万人（+10〜15%）</div>
+        <div><span style="color: var(--ocean);">消費単価</span> ¥325,000/人</div>
+        <div><span style="color: var(--ocean);">地域波及</span> <strong style="color: var(--ocean); font-size: 10pt;">¥193億</strong></div>
+        <div><span style="color: var(--ocean);">域内循環</span> 高（ネット設計）</div>
+      </div>
+    </div>
+  </div>
+  <div style="font-size: 6pt; color: var(--text-muted); margin-bottom: 3mm; line-height: 1.6;">※ 来訪者数の根拠：道の駅ゆいゆい国頭（国頭村）年間約17万人うち観光客約7万人、環境省やんばる世界遺産地域への来訪約9万人、今帰仁城跡ガイド利用1万人超。消費単価・経済波及の地域別公式統計は存在しない。経済循環が計測・可視化されていないこと自体が、ローカルネットワークシステムを必要とする理由のひとつである。</div>
+
+  <!-- Before/After 中間シナリオ + 3シナリオ比較 横並び -->
+  <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 4mm;">
+    <div>
+      <div class="section-title">中間シナリオ（30,000人）― ウェルネス単体 vs ネットワーク後</div>
+      <table style="width: 100%; border-collapse: collapse; font-size: 7.5pt;">
+        <thead>
+          <tr>
+            <th style="background: var(--sand); padding: 1.5mm 2.5mm; text-align: left; border-bottom: 2px solid var(--sand-dark); font-size: 6.5pt; font-weight: 700;">指標</th>
+            <th style="background: var(--sand); padding: 1.5mm 2.5mm; text-align: center; border-bottom: 2px solid var(--sand-dark); font-size: 6.5pt; color: var(--text-muted);">単体</th>
+            <th style="background: linear-gradient(135deg, #d8f3dc 0%, #caf0f8 100%); padding: 1.5mm 2.5mm; text-align: center; border-bottom: 2px solid var(--forest-light); font-size: 6.5pt; color: var(--forest); font-weight: 700;">ネット機能後</th>
+            <th style="background: var(--sand); padding: 1.5mm 2.5mm; text-align: center; border-bottom: 2px solid var(--sand-dark); font-size: 6.5pt; color: var(--accent); font-weight: 700;">増加</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding: 1.5mm 2.5mm; font-weight: 700; border-bottom: 1px solid #eee; font-size: 7pt;">経済乗数</td><td style="padding: 1.5mm 2.5mm; text-align: center; border-bottom: 1px solid #eee; color: var(--text-muted);">×1.5</td><td style="padding: 1.5mm 2.5mm; text-align: center; border-bottom: 1px solid #ddd; background: rgba(216,243,220,0.4); font-weight: 700; color: var(--forest);">×1.8</td><td style="padding: 1.5mm 2.5mm; text-align: center; border-bottom: 1px solid #eee; color: var(--accent); font-weight: 700;">+0.3</td></tr>
+          <tr><td style="padding: 1.5mm 2.5mm; font-weight: 700; border-bottom: 1px solid #eee; font-size: 7pt;">平均消費単価</td><td style="padding: 1.5mm 2.5mm; text-align: center; border-bottom: 1px solid #eee; color: var(--text-muted);">¥260,000</td><td style="padding: 1.5mm 2.5mm; text-align: center; border-bottom: 1px solid #ddd; background: rgba(216,243,220,0.4); font-weight: 700; color: var(--forest);">¥325,000</td><td style="padding: 1.5mm 2.5mm; text-align: center; border-bottom: 1px solid #eee; color: var(--accent); font-weight: 700;">+25%</td></tr>
+          <tr><td style="padding: 1.5mm 2.5mm; font-weight: 700; border-bottom: 1px solid #eee; font-size: 7pt;">直接観光収入</td><td style="padding: 1.5mm 2.5mm; text-align: center; border-bottom: 1px solid #eee; color: var(--text-muted);">¥78億</td><td style="padding: 1.5mm 2.5mm; text-align: center; border-bottom: 1px solid #ddd; background: rgba(216,243,220,0.4); font-weight: 700; color: var(--forest);">¥107億</td><td style="padding: 1.5mm 2.5mm; text-align: center; border-bottom: 1px solid #eee; color: var(--accent); font-weight: 700;">+¥29億</td></tr>
+          <tr><td style="padding: 1.5mm 2.5mm; font-weight: 700; font-size: 7pt; background: var(--sand);">波及効果込み</td><td style="padding: 1.5mm 2.5mm; text-align: center; background: var(--sand); color: var(--text-muted); font-weight: 700; font-size: 9.5pt;">¥117億</td><td style="padding: 1.5mm 2.5mm; text-align: center; background: linear-gradient(135deg, #d8f3dc 0%, #caf0f8 100%); font-weight: 700; color: var(--forest); font-size: 12pt;">¥193億</td><td style="padding: 1.5mm 2.5mm; text-align: center; background: var(--sand); color: var(--accent); font-weight: 700; font-size: 9pt;">+¥76億<br>+65%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="section-title">3シナリオ比較</div>
+      <div style="display: flex; flex-direction: column; gap: 2.5mm;">
+        <div style="background: var(--sand); border: 1.5px solid var(--sand-dark); border-radius: 8px; padding: 2.5mm 3.5mm;">
+          <div style="font-size: 6.5pt; color: var(--text-muted); margin-bottom: 1mm;">保守（15,000人）</div>
+          <div style="display: flex; align-items: center; gap: 2mm;"><span style="font-size: 10pt; color: var(--text-muted); font-weight: 700;">¥41億</span><span style="color: var(--accent);">→</span><span style="font-size: 12pt; color: var(--forest); font-weight: 700;">¥67億</span><span style="background: var(--forest); color: white; border-radius: 4px; padding: 1mm 2mm; font-size: 7pt; font-weight: 700; margin-left: auto;">+63%</span></div>
+        </div>
+        <div style="background: linear-gradient(135deg, #d8f3dc 0%, #caf0f8 100%); border: 2px solid var(--forest-light); border-radius: 8px; padding: 2.5mm 3.5mm;">
+          <div style="font-size: 6.5pt; color: var(--forest); font-weight: 700; margin-bottom: 1mm;">中間（30,000人）</div>
+          <div style="display: flex; align-items: center; gap: 2mm;"><span style="font-size: 10pt; color: var(--text-muted); font-weight: 700;">¥117億</span><span style="color: var(--accent);">→</span><span style="font-size: 12pt; color: var(--forest); font-weight: 700;">¥193億</span><span style="background: var(--forest); color: white; border-radius: 4px; padding: 1mm 2mm; font-size: 7pt; font-weight: 700; margin-left: auto;">+65%</span></div>
+        </div>
+        <div style="background: var(--ocean-pale); border: 1.5px solid var(--ocean); border-radius: 8px; padding: 2.5mm 3.5mm;">
+          <div style="font-size: 6.5pt; color: var(--ocean); margin-bottom: 1mm;">楽観（50,000人）</div>
+          <div style="display: flex; align-items: center; gap: 2mm;"><span style="font-size: 10pt; color: var(--text-muted); font-weight: 700;">¥262億</span><span style="color: var(--accent);">→</span><span style="font-size: 12pt; color: var(--ocean); font-weight: 700;">¥431億</span><span style="background: var(--ocean); color: white; border-radius: 4px; padding: 1mm 2mm; font-size: 7pt; font-weight: 700; margin-left: auto;">+64%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1施設の成長シミュレーション -->
+  <div class="section-title" style="margin-top: 4mm;">1施設の成長シミュレーション ― やんばるの小規模宿（10室）の場合</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2.5mm; margin-bottom: 2.5mm;">
+    <div style="border: 1.5px solid var(--sand-dark); border-radius: 8px; overflow: hidden; text-align: center;">
+      <div style="background: var(--sand); padding: 2mm 2.5mm; border-bottom: 1px solid var(--sand-dark);"><div style="font-size: 6pt; color: var(--text-muted); font-weight: 700;">現状（2025年）</div></div>
+      <div style="padding: 2.5mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div>宿泊単価 <strong style="color: var(--text);">¥12,000</strong></div>
+        <div>稼働率 <strong style="color: var(--text);">40%</strong></div>
+        <div>付帯収入 <strong style="color: var(--text);">¥50万</strong></div>
+      </div>
+      <div style="background: var(--sand); padding: 2mm; border-top: 1px solid var(--sand-dark);"><div style="font-size: 6.5pt; color: var(--text-muted);">年商</div><div style="font-size: 11pt; font-weight: 700; color: var(--text);">¥1,800万</div></div>
+    </div>
+    <div style="border: 1.5px solid #c8a96e; border-radius: 8px; overflow: hidden; text-align: center;">
+      <div style="background: #fef9ee; padding: 2mm 2.5mm; border-bottom: 1px solid #c8a96e;"><div style="font-size: 6pt; color: #9a6f2e; font-weight: 700;">Phase 1（2027年）</div></div>
+      <div style="padding: 2.5mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div>宿泊単価 <strong style="color: #9a6f2e;">¥18,000</strong></div>
+        <div>稼働率 <strong style="color: #9a6f2e;">55%</strong></div>
+        <div>付帯収入 <strong style="color: #9a6f2e;">¥400万</strong></div>
+      </div>
+      <div style="background: #fef9ee; padding: 2mm; border-top: 1px solid #c8a96e;"><div style="font-size: 6.5pt; color: #9a6f2e;">年商</div><div style="font-size: 11pt; font-weight: 700; color: #9a6f2e;">¥4,000万</div><div style="font-size: 6.5pt; color: #c8a96e;">（+122%）</div></div>
+    </div>
+    <div style="border: 1.5px solid var(--forest-light); border-radius: 8px; overflow: hidden; text-align: center;">
+      <div style="background: var(--forest-pale); padding: 2mm 2.5mm; border-bottom: 1px solid var(--forest-light);"><div style="font-size: 6pt; color: var(--forest); font-weight: 700;">Phase 2（2031年）</div></div>
+      <div style="padding: 2.5mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div>宿泊単価 <strong style="color: var(--forest);">¥28,000</strong></div>
+        <div>稼働率 <strong style="color: var(--forest);">70%</strong></div>
+        <div>付帯収入 <strong style="color: var(--forest);">¥1,850万</strong></div>
+      </div>
+      <div style="background: var(--forest-pale); padding: 2mm; border-top: 1px solid var(--forest-light);"><div style="font-size: 6.5pt; color: var(--forest);">年商</div><div style="font-size: 11pt; font-weight: 700; color: var(--forest);">¥9,000万</div><div style="font-size: 6.5pt; color: var(--forest-light);">（+400%）</div></div>
+    </div>
+    <div style="border: 2px solid var(--ocean); border-radius: 8px; overflow: hidden; text-align: center;">
+      <div style="background: linear-gradient(135deg, var(--forest) 0%, var(--ocean) 100%); padding: 2mm 2.5mm;"><div style="font-size: 6pt; color: rgba(255,255,255,0.8); font-weight: 700;">Phase 3（2037年）</div></div>
+      <div style="padding: 2.5mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div>宿泊単価 <strong style="color: var(--ocean);">¥40,000</strong></div>
+        <div>稼働率 <strong style="color: var(--ocean);">78%</strong></div>
+        <div>付帯収入 <strong style="color: var(--ocean);">¥2,600万</strong></div>
+      </div>
+      <div style="background: var(--ocean-pale); padding: 2mm; border-top: 1px solid var(--ocean);"><div style="font-size: 6.5pt; color: var(--ocean);">年商</div><div style="font-size: 12pt; font-weight: 700; color: var(--ocean);">¥1.4億</div><div style="font-size: 6.5pt; color: var(--ocean);">（+<strong>677%</strong>）</div></div>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5mm;">
+    <div style="background: var(--forest-pale); border-radius: 8px; padding: 2.5mm 3mm; display: flex; justify-content: space-between; align-items: center;">
+      <div style="font-size: 7pt; color: var(--forest); font-weight: 700;">宿泊単価の上昇</div>
+      <div style="font-size: 9pt; font-weight: 700; color: var(--forest);">¥12,000 → ¥40,000 <span style="font-size: 7pt;">（×3.3）</span></div>
+    </div>
+    <div style="background: var(--ocean-pale); border-radius: 8px; padding: 2.5mm 3mm; display: flex; justify-content: space-between; align-items: center;">
+      <div style="font-size: 7pt; color: var(--ocean); font-weight: 700;">利益（営業利益率20%・業界上位水準）</div>
+      <div style="font-size: 9pt; font-weight: 700; color: var(--ocean);">¥180万 → ¥2,800万 <span style="font-size: 7pt;">（×15.6）</span></div>
+    </div>
+    <div style="background: #fff8f0; border: 1.5px solid var(--accent); border-radius: 8px; padding: 2.5mm 3mm; display: flex; justify-content: space-between; align-items: center;">
+      <div style="font-size: 7pt; color: var(--accent); font-weight: 700;">OTA手数料削減（年商¥1.4億時）</div>
+      <div style="font-size: 9pt; font-weight: 700; color: var(--accent);">年間 約¥980万 削減 <span style="font-size: 7pt;">（実質15〜20%→8%）</span></div>
+    </div>
+    <div style="font-size: 6pt; color: var(--text-muted); margin-top: 2mm; line-height: 1.6;">※ 営業利益率はリョケン旅館・ホテル実態調査2023年版による（業界平均8〜10%、上位施設20%超）。利益試算は上位施設水準20%で算出。宿泊単価は2名1室利用の1室あたり料金。</div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 8: MVP + CTA ======================== -->
 <div class="page">
   <div class="page-header">
     <h2>まず小さく始める</h2>
-    <span class="page-num">5 / 5</span>
+    <span class="page-num">8 / 8</span>
   </div>
 
   <div class="section-title">最初の実装範囲（MVP）</div>
