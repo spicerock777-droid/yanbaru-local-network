@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TubamY 環境再生ウェルネスツーリズム 事業計画書</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+  :root {
+    --forest: #2d6a4f;
+    --forest-light: #40916c;
+    --forest-pale: #d8f3dc;
+    --ocean: #1a6b8a;
+    --ocean-light: #48cae4;
+    --ocean-pale: #caf0f8;
+    --sand: #f9f4ea;
+    --sand-dark: #e8dcc8;
+    --earth: #7b4f2e;
+    --earth-pale: #f5ece4;
+    --text: #1a1a1a;
+    --text-muted: #555;
+    --accent: #e07b39;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text);
+    background: #e0e0e0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    margin: 10mm auto;
+    padding: 14mm 16mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; }
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--forest);
+    padding-bottom: 3mm;
+    margin-bottom: 6mm;
+  }
+
+  .page-header h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13pt;
+    color: var(--forest);
+  }
+
+  .page-num {
+    font-size: 8pt;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .part-badge {
+    display: inline-block;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 1mm 3mm;
+    border-radius: 20px;
+    margin-right: 2mm;
+  }
+
+  .part-a { background: var(--forest-pale); color: var(--forest); }
+  .part-b { background: var(--ocean-pale); color: var(--ocean); }
+  .part-c { background: var(--earth-pale); color: var(--earth); }
+
+  .section-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--forest);
+    letter-spacing: 0.08em;
+    margin-bottom: 3mm;
+    padding-left: 3mm;
+    border-left: 3px solid var(--forest);
+  }
+
+  .section-title.ocean { color: var(--ocean); border-color: var(--ocean); }
+  .section-title.earth { color: var(--earth); border-color: var(--earth); }
+
+  /* NAV */
+  .doc-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(13, 59, 46, 0.96);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    gap: 12px;
+  }
+  .doc-nav-brand { color: rgba(255,255,255,0.4); font-size: 10px; letter-spacing: 0.1em; white-space: nowrap; }
+  .doc-nav-tabs { display: flex; gap: 4px; }
+  .doc-nav-tab { padding: 4px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: background 0.15s; }
+  .doc-nav-tab.active { background: rgba(255,255,255,0.18); color: white; }
+  .doc-nav-tab:not(.active) { color: rgba(255,255,255,0.5); }
+  .doc-nav-tab:not(.active):hover { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.8); }
+  .doc-nav-home { padding: 4px 10px; border-radius: 20px; font-size: 10px; text-decoration: none; color: #48cae4; border: 1px solid rgba(72,202,228,0.4); white-space: nowrap; }
+  .doc-nav-home:hover { background: rgba(72,202,228,0.1); }
+  @media print { .doc-nav { display: none; } }
+</style>
+</head>
+<body>
+
+<nav class="doc-nav">
+  <span class="doc-nav-brand">TUBAMY PROJECT</span>
+  <div class="doc-nav-tabs">
+    <a class="doc-nav-tab active" href="tubamy_project.html">TubamY 事業計画</a>
+    <a class="doc-nav-tab" href="wellness_brief.html">意義・根拠</a>
+    <a class="doc-nav-tab" href="presentation.html">ネットワーク提案</a>
+  </div>
+  <a class="doc-nav-home" href="index.html">← 資料一覧</a>
+</nav>
+
+<!-- ======================== PAGE 1: COVER ======================== -->
+<div class="page" style="background: linear-gradient(160deg, #0d3b2e 0%, #3d1f0a 60%, #1a6b8a 100%); color: white; display: flex; flex-direction: column; justify-content: space-between; padding: 20mm 18mm;">
+  <div>
+    <div style="font-size: 8pt; letter-spacing: 0.25em; color: #7de8c8; margin-bottom: 4mm;">TUBAMY — YANBARU · NAKIJIN</div>
+    <div style="font-family: 'Noto Serif JP', serif; font-size: 26pt; font-weight: 700; line-height: 1.5; margin-bottom: 5mm;">TubamY<br>環境再生ウェルネスツーリズム<br>事業計画書</div>
+    <div style="font-size: 10pt; color: rgba(255,255,255,0.7); line-height: 1.9; margin-bottom: 10mm;">
+      やんばる・今帰仁村　古民家一棟貸し（8名）× 1万坪の森<br>
+      森を整え、場を整え、自分を整える。<br>
+      消費しない滞在が、再生をつくる。
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-bottom: 8mm;">
+    <div style="background: rgba(216,243,220,0.12); border: 1px solid rgba(216,243,220,0.3); border-radius: 10px; padding: 4mm 5mm;">
+      <div style="font-size: 7pt; letter-spacing: 0.1em; color: #7de8c8; margin-bottom: 2mm;">PART A</div>
+      <div style="font-size: 9pt; font-weight: 700; color: white; margin-bottom: 1mm;">フィールド実施計画</div>
+      <div style="font-size: 7pt; color: rgba(255,255,255,0.55); line-height: 1.6;">オーナー・スタッフ向け。森の見立て・藪払いから体験設計まで。</div>
+    </div>
+    <div style="background: rgba(202,240,248,0.12); border: 1px solid rgba(202,240,248,0.3); border-radius: 10px; padding: 4mm 5mm;">
+      <div style="font-size: 7pt; letter-spacing: 0.1em; color: #90e0ef; margin-bottom: 2mm;">PART B</div>
+      <div style="font-size: 9pt; font-weight: 700; color: white; margin-bottom: 1mm;">ゲストプログラム案内</div>
+      <div style="font-size: 7pt; color: rgba(255,255,255,0.55); line-height: 1.6;">宿泊客向け。体験メニュー・宿泊モデルプラン。</div>
+    </div>
+    <div style="background: rgba(245,236,228,0.1); border: 1px solid rgba(245,236,228,0.3); border-radius: 10px; padding: 4mm 5mm;">
+      <div style="font-size: 7pt; letter-spacing: 0.1em; color: #f4a261; margin-bottom: 2mm;">PART C</div>
+      <div style="font-size: 9pt; font-weight: 700; color: white; margin-bottom: 1mm;">事業提案</div>
+      <div style="font-size: 7pt; color: rgba(255,255,255,0.55); line-height: 1.6;">投資家・行政向け。事業モデル・経済予測・支援制度。</div>
+    </div>
+  </div>
+
+  <div style="font-size: 7.5pt; color: rgba(255,255,255,0.35);">2025年　やんばるローカルネットワーク</div>
+</div>
+
+<!-- ======================== PAGE 2: OVERVIEW ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2>TubamY — フィールドと宿の概要</h2>
+    <span class="page-num">2 / 8</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-bottom: 5mm;">
+    <div style="border: 1.5px solid var(--forest-light); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--forest); color: white; padding: 2.5mm 4mm; font-size: 8.5pt; font-weight: 700;">🏡 古民家一棟貸し</div>
+      <div style="padding: 3.5mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.8;">
+        <div style="margin-bottom: 1.5mm;"><span style="color: var(--forest); font-weight: 700;">場所</span>　やんばる・今帰仁村</div>
+        <div style="margin-bottom: 1.5mm;"><span style="color: var(--forest); font-weight: 700;">規模</span>　一棟貸し・最大8名</div>
+        <div style="margin-bottom: 1.5mm;"><span style="color: var(--forest); font-weight: 700;">状態</span>　稼働中</div>
+        <div style="margin-bottom: 1.5mm;"><span style="color: var(--forest); font-weight: 700;">立地</span>　那覇空港から約1.5〜2時間</div>
+        <div style="margin-top: 2mm; background: var(--forest-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--forest);">世界文化遺産（今帰仁城跡）・世界自然遺産（やんばる）が集中する唯一の村に立地</div>
+      </div>
+    </div>
+    <div style="border: 1.5px solid var(--earth); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--earth); color: white; padding: 2.5mm 4mm; font-size: 8.5pt; font-weight: 700;">🌿 1万坪の森</div>
+      <div style="padding: 3.5mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.8;">
+        <div style="margin-bottom: 1.5mm;"><span style="color: var(--earth); font-weight: 700;">広さ</span>　約1万坪（約33,000㎡）</div>
+        <div style="margin-bottom: 1.5mm;"><span style="color: var(--earth); font-weight: 700;">現状</span>　手つかず・藪化が進行中</div>
+        <div style="margin-bottom: 1.5mm;"><span style="color: var(--earth); font-weight: 700;">課題</span>　光・風の遮断、土中環境の停滞</div>
+        <div style="margin-bottom: 1.5mm;"><span style="color: var(--earth); font-weight: 700;">可能性</span>　観察・藪払い・見立て・デザイン</div>
+        <div style="margin-top: 2mm; background: var(--earth-pale); border-radius: 6px; padding: 2mm 3mm; font-size: 7pt; color: var(--earth);">整えていくプロセスそのものが体験コンテンツになる</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">TubamYが体現するコンセプト</div>
+  <div style="background: linear-gradient(135deg, #0d3b2e 0%, #3d1f0a 100%); border-radius: 10px; padding: 4mm 6mm; color: white; margin-bottom: 5mm;">
+    <div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 2mm; align-items: center; text-align: center;">
+      <div style="font-size: 8.5pt; font-weight: 700; line-height: 1.6;">森を整える<br><span style="font-size: 7pt; font-weight: 400; color: rgba(255,255,255,0.6);">藪払い・水脈・見立て</span></div>
+      <div style="color: #7de8c8; font-size: 16pt; font-weight: 300;">=</div>
+      <div style="font-size: 8.5pt; font-weight: 700; line-height: 1.6;">場を整える<br><span style="font-size: 7pt; font-weight: 400; color: rgba(255,255,255,0.6);">宿の清掃・共同作業</span></div>
+      <div style="color: #7de8c8; font-size: 16pt; font-weight: 300;">=</div>
+      <div style="font-size: 8.5pt; font-weight: 700; line-height: 1.6;">自分を整える<br><span style="font-size: 7pt; font-weight: 400; color: rgba(255,255,255,0.6);">ウェルネス・回復</span></div>
+    </div>
+  </div>
+
+  <div class="section-title">今帰仁村という文脈</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-bottom: 4mm;">
+    <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+      <strong style="color: var(--forest); display: block; margin-bottom: 1mm;">🏯 2つの世界遺産</strong>
+      今帰仁城跡（世界文化遺産）とやんばるの森（世界自然遺産）。両方が1つの村に集中する唯一の場所。
+    </div>
+    <div style="background: var(--ocean-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+      <strong style="color: var(--ocean); display: block; margin-bottom: 1mm;">🌿 今帰仁ちゅーなー</strong>
+      村公認ウェルネスガイド制度（2024年12月始動・第1期25名）。TubamYのプログラムと連携できる既存の人材ネットワーク。
+    </div>
+    <div style="background: var(--earth-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+      <strong style="color: var(--earth); display: block; margin-bottom: 1mm;">🍉 農と食の文化</strong>
+      今帰仁スイカ・今帰仁マンゴー・シークヮーサー。滞在中の食体験と地域農家との接続が可能。
+    </div>
+  </div>
+
+  <div class="section-title">再生型ウェルネスの文脈における位置づけ</div>
+  <div style="font-size: 7.5pt; color: var(--text-muted); line-height: 1.8; background: var(--sand); border-radius: 8px; padding: 3.5mm 5mm; border: 1px solid var(--sand-dark);">
+    TubamYは「消費する旅行」から「再生する滞在」への転換を体現する場です。1万坪の森の再生活動に旅行者が参加することは、コスタリカのマングローブ植林・ウミガメ保全と同じ構造であり、GWI（グローバルウェルネスインスティテュート）が注目する<strong style="color: var(--forest);">「再生型ウェルネスツーリズム（Regenerative Wellness Tourism）」</strong>の具体的な実践事例になります。やんばるローカルネットワークにおける中核フィールドとして機能します。
+  </div>
+</div>
+
+<!-- ======================== PAGE 3: FIELD PLAN (PART A) ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2><span class="part-badge part-a">PART A</span>フィールド実施計画</h2>
+    <span class="page-num">3 / 8</span>
+  </div>
+
+  <div class="section-title">1万坪の森 ― フェーズ別アプローチ</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2.5mm; margin-bottom: 5mm;">
+
+    <div style="border: 1.5px solid var(--sand-dark); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--sand); padding: 2.5mm 3mm; border-bottom: 1px solid var(--sand-dark);">
+        <div style="font-size: 6pt; font-weight: 700; color: var(--text-muted); letter-spacing: 0.1em;">PHASE 0</div>
+        <div style="font-size: 8.5pt; font-weight: 700;">観察・見立て</div>
+        <div style="font-size: 6.5pt; color: var(--text-muted);">準備期（今すぐ〜）</div>
+      </div>
+      <div style="padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        <div style="font-weight: 700; color: var(--text); margin-bottom: 1.5mm;">やること</div>
+        <div style="margin-bottom: 1mm;">・地形・水の流れを読む</div>
+        <div style="margin-bottom: 1mm;">・植生・藪の状態を記録</div>
+        <div style="margin-bottom: 1mm;">・土中環境の観察（点穴・断面）</div>
+        <div style="margin-bottom: 1mm;">・風の道を探す</div>
+        <div style="margin-top: 2mm; background: var(--sand); border-radius: 4px; padding: 1.5mm 2mm; font-size: 6.5pt;">ゲスト参加：◎<br>「見立て体験」として即コンテンツ化</div>
+      </div>
+    </div>
+
+    <div style="border: 1.5px solid var(--forest-light); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--forest); padding: 2.5mm 3mm; border-bottom: 1px solid var(--forest-light);">
+        <div style="font-size: 6pt; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 0.1em;">PHASE 1</div>
+        <div style="font-size: 8.5pt; font-weight: 700; color: white;">藪払い</div>
+        <div style="font-size: 6.5pt; color: rgba(255,255,255,0.7);">光と風を入れる</div>
+      </div>
+      <div style="padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        <div style="font-weight: 700; color: var(--text); margin-bottom: 1.5mm;">やること</div>
+        <div style="margin-bottom: 1mm;">・風の草刈り（高刈り・高田式）</div>
+        <div style="margin-bottom: 1mm;">・優先エリアの設定と実施</div>
+        <div style="margin-bottom: 1mm;">・伐採材の活用（抵抗柵・炭）</div>
+        <div style="margin-bottom: 1mm;">・光の入り方の変化を記録</div>
+        <div style="margin-top: 2mm; background: var(--forest-pale); border-radius: 4px; padding: 1.5mm 2mm; font-size: 6.5pt; color: var(--forest);">ゲスト参加：◎<br>身体を使う再生体験の中核</div>
+      </div>
+    </div>
+
+    <div style="border: 1.5px solid var(--ocean); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--ocean); padding: 2.5mm 3mm; border-bottom: 1px solid var(--ocean);">
+        <div style="font-size: 6pt; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 0.1em;">PHASE 2</div>
+        <div style="font-size: 8.5pt; font-weight: 700; color: white;">水脈・土中整備</div>
+        <div style="font-size: 6.5pt; color: rgba(255,255,255,0.7);">大地の呼吸を回復</div>
+      </div>
+      <div style="padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        <div style="font-weight: 700; color: var(--text); margin-bottom: 1.5mm;">やること</div>
+        <div style="margin-bottom: 1mm;">・点穴・水脈溝の施工</div>
+        <div style="margin-bottom: 1mm;">・コンクリート護岸の見直し</div>
+        <div style="margin-bottom: 1mm;">・グランドカバー・炭入れ</div>
+        <div style="margin-bottom: 1mm;">・土中生物・植生の変化を観察</div>
+        <div style="margin-top: 2mm; background: var(--ocean-pale); border-radius: 4px; padding: 1.5mm 2mm; font-size: 6.5pt; color: var(--ocean);">ゲスト参加：○<br>土と水の学びが深い体験に</div>
+      </div>
+    </div>
+
+    <div style="border: 2px solid var(--earth); border-radius: 10px; overflow: hidden;">
+      <div style="background: linear-gradient(135deg, var(--earth) 0%, var(--forest) 100%); padding: 2.5mm 3mm;">
+        <div style="font-size: 6pt; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 0.1em;">PHASE 3</div>
+        <div style="font-size: 8.5pt; font-weight: 700; color: white;">活用デザイン</div>
+        <div style="font-size: 6.5pt; color: rgba(255,255,255,0.7);">場の完成形をつくる</div>
+      </div>
+      <div style="padding: 3mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        <div style="font-weight: 700; color: var(--text); margin-bottom: 1.5mm;">やること</div>
+        <div style="margin-bottom: 1mm;">・森の活用マップ制作</div>
+        <div style="margin-bottom: 1mm;">・常設体験ルートの設計</div>
+        <div style="margin-bottom: 1mm;">・野外滞在スペースの整備</div>
+        <div style="margin-bottom: 1mm;">・「場のデザイン会議」を定例化</div>
+        <div style="margin-top: 2mm; background: var(--earth-pale); border-radius: 4px; padding: 1.5mm 2mm; font-size: 6.5pt; color: var(--earth);">ゲスト参加：◎<br>未来の場を一緒につくる体験</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">オーナー・スタッフが準備すること</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin-bottom: 4mm;">
+    <div style="display: flex; flex-direction: column; gap: 2mm;">
+      <div style="background: var(--forest-pale); border-left: 3px solid var(--forest); border-radius: 0 8px 8px 0; padding: 3mm 4mm;">
+        <div style="font-size: 8pt; font-weight: 700; color: var(--forest);">① 観察眼を育てる</div>
+        <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.6; margin-top: 1mm;">大地の再生（矢野智徳）・土中環境（高田宏臣）の基本を学ぶ。「見立て」ができるスタッフがいることで体験の質が変わる。</div>
+      </div>
+      <div style="background: var(--ocean-pale); border-left: 3px solid var(--ocean); border-radius: 0 8px 8px 0; padding: 3mm 4mm;">
+        <div style="font-size: 8pt; font-weight: 700; color: var(--ocean);">② 記録を蓄積する</div>
+        <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.6; margin-top: 1mm;">写真・動画・テキストで森の変化を記録し続ける。「変化が見える」こと自体がゲストへの最高のコンテンツになる。</div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 2mm;">
+      <div style="background: var(--earth-pale); border-left: 3px solid var(--earth); border-radius: 0 8px 8px 0; padding: 3mm 4mm;">
+        <div style="font-size: 8pt; font-weight: 700; color: var(--earth);">③ 道具・安全を整える</div>
+        <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.6; margin-top: 1mm;">草刈り鎌・剪定鋏・スコップなどのゲスト用道具。ハチ・マムシ等の安全対策と応急処置の準備。</div>
+      </div>
+      <div style="background: var(--sand); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 3mm 4mm; border: 1px solid var(--sand-dark);">
+        <div style="font-size: 8pt; font-weight: 700; color: var(--accent);">④ 今帰仁ちゅーなーと連携</div>
+        <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.6; margin-top: 1mm;">村公認ガイド「今帰仁ちゅーなー」と組むことで、プログラムの信頼性・集客力が上がる。ガイドフィーをネットワーク内で循環させる。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 4: GUEST PROGRAMS (PART B) ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2><span class="part-badge part-b">PART B</span>ゲストプログラム案内 ― 体験メニュー</h2>
+    <span class="page-num">4 / 8</span>
+  </div>
+
+  <div class="section-title ocean">体験コンテンツ一覧</div>
+  <div style="display: flex; flex-direction: column; gap: 2.5mm; margin-bottom: 5mm;">
+
+    <div style="border: 1.5px solid var(--forest-light); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--forest-pale); padding: 2.5mm 4mm; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 8.5pt; font-weight: 700; color: var(--forest);">🌿 ① 森の観察・見立て</span>
+        <span style="font-size: 7pt; background: var(--forest); color: white; border-radius: 20px; padding: 1mm 3mm;">1〜2時間　随時</span>
+      </div>
+      <div style="padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+        専門家（またはちゅーなー）と森を歩き、光・風・水の流れ、植生の状態を「読む」。正解を教えるのではなく、観察眼の育て方を伝える。「この森は今どんな状態か？どこに可能性があるか？」を参加者自身が感じる体験。<br>
+        <span style="font-size: 6.5pt; color: var(--forest);">蔡温の「抱護の視点」で森と村のつながりを読む観点を加えることで、やんばる固有の深みが出る。</span>
+      </div>
+    </div>
+
+    <div style="border: 1.5px solid var(--forest-light); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--forest-pale); padding: 2.5mm 4mm; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 8.5pt; font-weight: 700; color: var(--forest);">🌱 ② 藪払い体験（風の草刈り）</span>
+        <span style="font-size: 7pt; background: var(--forest); color: white; border-radius: 20px; padding: 1mm 3mm;">2〜4時間　午前</span>
+      </div>
+      <div style="padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+        鎌・剪定鋏を使って実際に藪を払い、光と風を森に入れる作業に参加。「地ぎわ切りしない高刈り」という矢野智徳の手法を実践。作業後、変わった景色を自分の目で確かめる達成感がある。身体を使い、汗をかき、森と対話する。グループで行うことで連帯感も生まれる。
+      </div>
+    </div>
+
+    <div style="border: 1.5px solid var(--ocean); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--ocean-pale); padding: 2.5mm 4mm; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 8.5pt; font-weight: 700; color: var(--ocean);">🗺️ ③ 土地のデザイン会議（参加型）</span>
+        <span style="font-size: 7pt; background: var(--ocean); color: white; border-radius: 20px; padding: 1mm 3mm;">1〜2時間　夜</span>
+      </div>
+      <div style="padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+        昼間の観察・作業を振り返り、「この森をどう使うか」を参加者と一緒に考える夜の対話の場。地図を広げ、アイデアを書き込む。参加者は「この場の未来をつくった人」になる。森の整備が続く限り、リピーターが「前回と今回の変化」を確かめに来る仕組みになる。
+      </div>
+    </div>
+
+    <div style="border: 2px solid var(--earth); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--earth-pale); padding: 2.5mm 4mm; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 8.5pt; font-weight: 700; color: var(--earth);">🏡 ④ 場を整える ― チェックアウト前の清掃</span>
+        <span style="font-size: 7pt; background: var(--earth); color: white; border-radius: 20px; padding: 1mm 3mm;">1時間　朝</span>
+      </div>
+      <div style="padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.7;">
+        チェックアウト前の朝、全員で宿を清掃する。掃除・整理整頓・使った場所を元に戻す作業を「プログラムの締め」として位置づける。森を整えた同じ手と気持ちで、自分たちが過ごした場所を次の人のために整える。禅の作務（さむ）に通じる「行為そのものが整え」の体験。強制ではなく「共にやりたくなる」雰囲気を大切に。<br>
+        <span style="font-size: 6.5pt; color: var(--earth); font-weight: 700;">→ 清掃後、オーナーとの短い振り返りの時間を設ける。滞在全体の意味が言葉になる瞬間。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title ocean">オプション体験（今帰仁村の資源と接続）</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5mm;">
+    <div style="background: #f5f5f5; border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.6;">
+      <strong style="color: var(--text); display: block; margin-bottom: 1mm;">🏯 今帰仁城跡 朝の散歩</strong>
+      ちゅーなーガイドと早朝の城跡へ。蔡温の抱護思想と目の前の石垣・森を重ねながら歩く。
+    </div>
+    <div style="background: #f5f5f5; border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.6;">
+      <strong style="color: var(--text); display: block; margin-bottom: 1mm;">🍉 地元農家との交流</strong>
+      今帰仁スイカ・マンゴー農家を訪問。地域の食とウェルネスのつながりを体感する。
+    </div>
+    <div style="background: #f5f5f5; border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--text-muted); line-height: 1.6;">
+      <strong style="color: var(--text); display: block; margin-bottom: 1mm;">🌊 海の観察</strong>
+      森の再生が海につながる仕組みを実感する海岸・珊瑚礁の観察。やんばるの課題を肌で知る。
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 5: STAY PLANS (PART B) ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2><span class="part-badge part-b">PART B</span>ゲストプログラム案内 ― 宿泊モデルプラン</h2>
+    <span class="page-num">5 / 8</span>
+  </div>
+
+  <div class="section-title ocean">宿泊モデルプラン</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3.5mm; margin-bottom: 5mm;">
+
+    <!-- 1泊2日 -->
+    <div style="border: 1.5px solid var(--sand-dark); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--sand); padding: 3mm 4mm; border-bottom: 1px solid var(--sand-dark);">
+        <div style="font-size: 7pt; color: var(--text-muted);">入門プラン</div>
+        <div style="font-size: 11pt; font-weight: 700;">1泊2日</div>
+        <div style="font-size: 7pt; color: var(--text-muted);">「はじめての再生体験」</div>
+      </div>
+      <div style="padding: 3.5mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.9;">
+        <div style="font-weight: 700; color: var(--text); margin-bottom: 2mm;">DAY 1</div>
+        <div>午後　到着・宿のオリエンテーション</div>
+        <div>夕方　森の観察・見立て（①）</div>
+        <div>夜　　土地のデザイン会議（③）</div>
+        <div style="font-weight: 700; color: var(--text); margin: 2mm 0;">DAY 2</div>
+        <div>午前　藪払い体験（②）</div>
+        <div>昼　　振り返り・昼食</div>
+        <div>午後　場を整える・清掃（④）</div>
+        <div>　　　チェックアウト</div>
+      </div>
+      <div style="background: var(--sand); padding: 2.5mm 4mm; border-top: 1px solid var(--sand-dark); font-size: 7pt; color: var(--text-muted);">対象：初回・個人・カップル</div>
+    </div>
+
+    <!-- 2泊3日 -->
+    <div style="border: 2px solid var(--forest-light); border-radius: 10px; overflow: hidden;">
+      <div style="background: var(--forest); padding: 3mm 4mm;">
+        <div style="font-size: 7pt; color: rgba(255,255,255,0.6);">標準プラン（推奨）</div>
+        <div style="font-size: 11pt; font-weight: 700; color: white;">2泊3日</div>
+        <div style="font-size: 7pt; color: rgba(255,255,255,0.7);">「森と場と自分を整える」</div>
+      </div>
+      <div style="padding: 3.5mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.9;">
+        <div style="font-weight: 700; color: var(--text); margin-bottom: 2mm;">DAY 1</div>
+        <div>午後　到着・オリエンテーション</div>
+        <div>夕方　森の観察・見立て（①）</div>
+        <div>夜　　土地のデザイン会議（③）</div>
+        <div style="font-weight: 700; color: var(--text); margin: 2mm 0;">DAY 2</div>
+        <div>早朝　今帰仁城跡 朝の散歩（opt）</div>
+        <div>午前　藪払い体験・前半（②）</div>
+        <div>午後　農家訪問 または 海の観察（opt）</div>
+        <div>夜　　対話・振り返り</div>
+        <div style="font-weight: 700; color: var(--text); margin: 2mm 0;">DAY 3</div>
+        <div>午前　藪払い体験・仕上げ（②）</div>
+        <div>　　　場を整える・清掃（④）</div>
+        <div>　　　チェックアウト</div>
+      </div>
+      <div style="background: var(--forest-pale); padding: 2.5mm 4mm; border-top: 1px solid var(--forest-light); font-size: 7pt; color: var(--forest);">対象：グループ・家族・チームリトリート</div>
+    </div>
+
+    <!-- 3泊4日 -->
+    <div style="border: 1.5px solid var(--ocean); border-radius: 10px; overflow: hidden;">
+      <div style="background: linear-gradient(135deg, var(--forest) 0%, var(--ocean) 100%); padding: 3mm 4mm;">
+        <div style="font-size: 7pt; color: rgba(255,255,255,0.6);">深い滞在プラン</div>
+        <div style="font-size: 11pt; font-weight: 700; color: white;">3泊4日以上</div>
+        <div style="font-size: 7pt; color: rgba(255,255,255,0.7);">「場をつくる人になる」</div>
+      </div>
+      <div style="padding: 3.5mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.9;">
+        <div style="font-weight: 700; color: var(--text); margin-bottom: 2mm;">DAY 1〜2</div>
+        <div>2泊3日プランに同じ</div>
+        <div style="font-weight: 700; color: var(--text); margin: 2mm 0;">DAY 3</div>
+        <div>午前　水脈・点穴体験（Phase 2）</div>
+        <div>午後　森の活用マップ制作（③深化）</div>
+        <div>夜　　設計発表・オーナーとの対話</div>
+        <div style="font-weight: 700; color: var(--text); margin: 2mm 0;">DAY 4</div>
+        <div>午前　場を整える・清掃（④）</div>
+        <div>　　　チェックアウト</div>
+        <div style="margin-top: 2mm; font-size: 6.5pt; color: var(--ocean);">次回来訪時に「自分が整えた場所」の変化を確認できる。リピートが生まれる構造。</div>
+      </div>
+      <div style="background: var(--ocean-pale); padding: 2.5mm 4mm; border-top: 1px solid var(--ocean); font-size: 7pt; color: var(--ocean);">対象：法人リトリート・深い体験希望者</div>
+    </div>
+  </div>
+
+  <div class="section-title ocean">料金イメージ（参考）</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4mm;">
+    <div style="font-size: 7.5pt; color: var(--text-muted); line-height: 1.8; background: var(--sand); border-radius: 8px; padding: 3.5mm 5mm; border: 1px solid var(--sand-dark);">
+      <strong style="color: var(--text); display: block; margin-bottom: 2mm;">現状（宿泊のみ）</strong>
+      一棟貸し8名の一般的な価格帯。宿泊費が収益の大半を占める。体験コンテンツはほぼゼロ。
+    </div>
+    <div style="font-size: 7.5pt; color: var(--text-muted); line-height: 1.8; background: var(--forest-pale); border-radius: 8px; padding: 3.5mm 5mm; border: 1px solid var(--forest-light);">
+      <strong style="color: var(--forest); display: block; margin-bottom: 2mm;">ウェルネスプログラム導入後</strong>
+      宿泊費＋体験プログラム費（1人¥5,000〜15,000/日）＋オプション体験（ちゅーなーガイド費等）。消費単価が大きく上昇。1棟貸し8名×2泊で¥30〜60万の売上も視野に入る。
+    </div>
+  </div>
+  <div style="font-size: 6pt; color: var(--text-muted); margin-top: 2mm; line-height: 1.5;">※ 詳細な経済シミュレーションはPART C（P7）に記載。</div>
+</div>
+
+<!-- ======================== PAGE 6: BUSINESS MODEL (PART C) ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2><span class="part-badge part-c">PART C</span>事業提案 ― TubamYの事業構造</h2>
+    <span class="page-num">6 / 8</span>
+  </div>
+
+  <div class="section-title earth">TubamYの事業モデル</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-bottom: 5mm;">
+    <div style="background: var(--forest-pale); border-radius: 10px; padding: 3.5mm 4mm; text-align: center;">
+      <div style="font-size: 9pt; font-weight: 700; color: var(--forest); margin-bottom: 2mm;">収益①<br>宿泊業</div>
+      <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.7;">古民家一棟貸しの宿泊収入。ウェルネスプログラム付加で客室単価と稼働率を向上。</div>
+    </div>
+    <div style="background: var(--ocean-pale); border-radius: 10px; padding: 3.5mm 4mm; text-align: center;">
+      <div style="font-size: 9pt; font-weight: 700; color: var(--ocean); margin-bottom: 2mm;">収益②<br>体験プログラム</div>
+      <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.7;">森の観察・藪払い・デザイン会議のプログラム料。日帰り参加者・非宿泊者にも販売可能。</div>
+    </div>
+    <div style="background: var(--earth-pale); border-radius: 10px; padding: 3.5mm 4mm; text-align: center;">
+      <div style="font-size: 9pt; font-weight: 700; color: var(--earth); margin-bottom: 2mm;">収益③<br>法人リトリート</div>
+      <div style="font-size: 7pt; color: var(--text-muted); line-height: 1.7;">企業・団体向けの2〜3泊チームリトリート。研修・ウェルビーイング・チームビルディング需要を取り込む。</div>
+    </div>
+  </div>
+
+  <div class="section-title earth">やんばるローカルネットワークにおける位置づけ</div>
+  <div style="background: linear-gradient(135deg, rgba(13,59,46,0.05) 0%, rgba(26,107,138,0.05) 100%); border: 1.5px solid var(--forest-light); border-radius: 10px; padding: 4mm 5mm; margin-bottom: 5mm;">
+    <div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 2mm; align-items: center; font-size: 7.5pt;">
+      <div style="text-align: center; background: white; border-radius: 8px; padding: 2.5mm 3mm; border: 1px solid var(--forest-light);">
+        <div style="font-weight: 700; color: var(--forest); margin-bottom: 1mm;">地域農家</div>
+        <div style="color: var(--text-muted); font-size: 6.5pt;">今帰仁スイカ・マンゴー・シークヮーサー</div>
+      </div>
+      <div style="color: var(--accent); font-size: 14pt; font-weight: 700; text-align: center;">⇄</div>
+      <div style="text-align: center; background: linear-gradient(135deg, var(--forest-pale), var(--earth-pale)); border-radius: 8px; padding: 2.5mm 3mm; border: 2px solid var(--forest);">
+        <div style="font-weight: 700; color: var(--forest); margin-bottom: 1mm;">TubamY</div>
+        <div style="color: var(--text-muted); font-size: 6.5pt;">宿泊＋森の体験拠点</div>
+      </div>
+      <div style="color: var(--accent); font-size: 14pt; font-weight: 700; text-align: center;">⇄</div>
+      <div style="text-align: center; background: white; border-radius: 8px; padding: 2.5mm 3mm; border: 1px solid var(--ocean);">
+        <div style="font-weight: 700; color: var(--ocean); margin-bottom: 1mm;">今帰仁ちゅーなー</div>
+        <div style="color: var(--text-muted); font-size: 6.5pt;">村公認ウェルネスガイド</div>
+      </div>
+    </div>
+    <div style="margin-top: 3mm; font-size: 7pt; color: var(--text-muted); text-align: center; line-height: 1.6;">食事・農体験→TubamYで消費 ／ ガイド料→ちゅーなーへ ／ ゲストを3者が連携して受け入れる<br>域内でお金が循環し、エリア全体の経済が育つ</div>
+  </div>
+
+  <div class="section-title earth">「消費しない体験」が持つ差別化の強さ</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3mm;">
+    <div style="display: flex; flex-direction: column; gap: 2mm;">
+      <div style="background: #f5f5f5; border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: #888; line-height: 1.6;">
+        <strong style="color: #999; display: block; margin-bottom: 1mm;">一般観光の宿泊（比較）</strong>
+        チェックイン → 寝る → チェックアウト。宿はただの宿。場所への愛着・記憶は薄い。リピートする理由が弱い。
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 2mm;">
+      <div style="background: var(--forest-pale); border-radius: 8px; padding: 3mm 4mm; font-size: 7.5pt; color: var(--forest); line-height: 1.6;">
+        <strong style="display: block; margin-bottom: 1mm;">TubamYの体験（差別化）</strong>
+        自分が整えた森と場所が残る。次に来たとき「自分がつくった場所」に帰ってくる感覚。体験に意味が生まれ、強いリピート動機になる。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 7: ECONOMIC FORECAST (PART C) ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2><span class="part-badge part-c">PART C</span>事業提案 ― 経済予測</h2>
+    <span class="page-num">7 / 8</span>
+  </div>
+
+  <div class="section-title earth">1施設シミュレーション ― TubamYの場合（古民家一棟貸し・8名）</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2.5mm; margin-bottom: 3mm;">
+    <div style="border: 1.5px solid var(--sand-dark); border-radius: 8px; overflow: hidden; text-align: center;">
+      <div style="background: var(--sand); padding: 2mm 2.5mm; border-bottom: 1px solid var(--sand-dark);"><div style="font-size: 6pt; color: var(--text-muted); font-weight: 700;">現状（2025年）</div></div>
+      <div style="padding: 2.5mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div>客室単価 <strong style="color: var(--text);">¥12,000</strong></div>
+        <div>稼働率 <strong style="color: var(--text);">40%</strong></div>
+        <div>体験収入 <strong style="color: var(--text);">ほぼゼロ</strong></div>
+      </div>
+      <div style="background: var(--sand); padding: 2mm; border-top: 1px solid var(--sand-dark);"><div style="font-size: 6.5pt; color: var(--text-muted);">年商（推計）</div><div style="font-size: 10pt; font-weight: 700; color: var(--text);">¥1,800万</div></div>
+    </div>
+    <div style="border: 1.5px solid #c8a96e; border-radius: 8px; overflow: hidden; text-align: center;">
+      <div style="background: #fef9ee; padding: 2mm 2.5mm; border-bottom: 1px solid #c8a96e;"><div style="font-size: 6pt; color: #9a6f2e; font-weight: 700;">Phase 1（2027年）</div></div>
+      <div style="padding: 2.5mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div>客室単価 <strong style="color: #9a6f2e;">¥18,000</strong></div>
+        <div>稼働率 <strong style="color: #9a6f2e;">55%</strong></div>
+        <div>体験収入 <strong style="color: #9a6f2e;">¥400万</strong></div>
+      </div>
+      <div style="background: #fef9ee; padding: 2mm; border-top: 1px solid #c8a96e;"><div style="font-size: 6.5pt; color: #9a6f2e;">年商</div><div style="font-size: 10pt; font-weight: 700; color: #9a6f2e;">¥4,000万</div><div style="font-size: 6.5pt; color: #c8a96e;">（+122%）</div></div>
+    </div>
+    <div style="border: 1.5px solid var(--forest-light); border-radius: 8px; overflow: hidden; text-align: center;">
+      <div style="background: var(--forest-pale); padding: 2mm 2.5mm; border-bottom: 1px solid var(--forest-light);"><div style="font-size: 6pt; color: var(--forest); font-weight: 700;">Phase 2（2031年）</div></div>
+      <div style="padding: 2.5mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div>客室単価 <strong style="color: var(--forest);">¥28,000</strong></div>
+        <div>稼働率 <strong style="color: var(--forest);">70%</strong></div>
+        <div>体験収入 <strong style="color: var(--forest);">¥1,850万</strong></div>
+      </div>
+      <div style="background: var(--forest-pale); padding: 2mm; border-top: 1px solid var(--forest-light);"><div style="font-size: 6.5pt; color: var(--forest);">年商</div><div style="font-size: 10pt; font-weight: 700; color: var(--forest);">¥9,000万</div><div style="font-size: 6.5pt; color: var(--forest-light);">（+400%）</div></div>
+    </div>
+    <div style="border: 2px solid var(--ocean); border-radius: 8px; overflow: hidden; text-align: center;">
+      <div style="background: linear-gradient(135deg, var(--forest), var(--ocean)); padding: 2mm 2.5mm;"><div style="font-size: 6pt; color: rgba(255,255,255,0.8); font-weight: 700;">Phase 3（2037年）</div></div>
+      <div style="padding: 2.5mm; font-size: 7pt; line-height: 1.8; color: var(--text-muted);">
+        <div>客室単価 <strong style="color: var(--ocean);">¥40,000</strong></div>
+        <div>稼働率 <strong style="color: var(--ocean);">78%</strong></div>
+        <div>体験収入 <strong style="color: var(--ocean);">¥2,600万</strong></div>
+      </div>
+      <div style="background: var(--ocean-pale); padding: 2mm; border-top: 1px solid var(--ocean);"><div style="font-size: 6.5pt; color: var(--ocean);">年商</div><div style="font-size: 11pt; font-weight: 700; color: var(--ocean);">¥1.4億</div><div style="font-size: 6.5pt; color: var(--ocean);">（+677%）</div></div>
+    </div>
+  </div>
+  <div style="font-size: 6pt; color: var(--text-muted); margin-bottom: 4mm; line-height: 1.6;">※ シミュレーションはやんばるローカルネットワーク資料（経済予測ページ）の1施設モデルをTubamYの規模・構成に準拠して適用。客室単価は2名1室基準。営業利益率は業界上位水準20%で試算（リョケン旅館・ホテル実態調査2023年版）。</div>
+
+  <div class="section-title earth">収益の多層化 ― 宿泊のみから複数収益へ</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4mm;">
+    <div>
+      <div style="font-size: 7.5pt; font-weight: 700; color: var(--text-muted); margin-bottom: 2mm;">現状の収益構造</div>
+      <div style="display: flex; flex-direction: column; gap: 1.5mm;">
+        <div style="background: #f5f5f5; border-radius: 6px; padding: 2.5mm 3mm; display: flex; justify-content: space-between; font-size: 7.5pt;">
+          <span style="color: #999;">宿泊収入</span><span style="color: #999;">100%</span>
+        </div>
+        <div style="background: #f0f0f0; border-radius: 6px; padding: 2.5mm 3mm; display: flex; justify-content: space-between; font-size: 7.5pt;">
+          <span style="color: #bbb;">体験・飲食・物販</span><span style="color: #bbb;">ほぼゼロ</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size: 7.5pt; font-weight: 700; color: var(--forest); margin-bottom: 2mm;">Phase 2以降の収益構造</div>
+      <div style="display: flex; flex-direction: column; gap: 1.5mm;">
+        <div style="background: var(--forest-pale); border-radius: 6px; padding: 2.5mm 3mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--forest);">
+          <span>宿泊収入</span><span style="font-weight: 700;">約55%</span>
+        </div>
+        <div style="background: var(--ocean-pale); border-radius: 6px; padding: 2.5mm 3mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--ocean);">
+          <span>体験プログラム料</span><span style="font-weight: 700;">約25%</span>
+        </div>
+        <div style="background: var(--earth-pale); border-radius: 6px; padding: 2.5mm 3mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--earth);">
+          <span>法人リトリート・飲食・物販</span><span style="font-weight: 700;">約20%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE 8: SUPPORT & NEXT ACTIONS (PART C) ======================== -->
+<div class="page">
+  <div class="page-header">
+    <h2><span class="part-badge part-c">PART C</span>事業提案 ― 支援制度・ネクストアクション</h2>
+    <span class="page-num">8 / 8</span>
+  </div>
+
+  <div class="section-title earth">活用できる支援制度・補助金（参考）</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin-bottom: 5mm;">
+    <div style="border: 1.5px solid var(--forest-light); border-radius: 8px; overflow: hidden;">
+      <div style="background: var(--forest-pale); padding: 2mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--forest);">観光庁・農林水産省</div>
+      <div style="padding: 3mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        <div style="margin-bottom: 1mm;"><strong style="color: var(--text);">農泊推進対策（農林水産省）</strong><br>農山漁村でのウェルネスツーリズム・農泊事業に補助。</div>
+        <div><strong style="color: var(--text);">観光地域づくり法人（DMO）支援</strong><br>やんばるローカルネットワーク全体の組織化に活用可能。</div>
+      </div>
+    </div>
+    <div style="border: 1.5px solid var(--ocean); border-radius: 8px; overflow: hidden;">
+      <div style="background: var(--ocean-pale); padding: 2mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--ocean);">沖縄県・今帰仁村</div>
+      <div style="padding: 3mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        <div style="margin-bottom: 1mm;"><strong style="color: var(--text);">沖縄振興特別推進交付金</strong><br>地域独自の観光・産業振興に活用できる交付金。</div>
+        <div><strong style="color: var(--text);">今帰仁村ウェルネス推進事業</strong><br>「今帰仁ちゅーなー」との連携でプログラム認定の可能性。</div>
+      </div>
+    </div>
+    <div style="border: 1.5px solid var(--earth); border-radius: 8px; overflow: hidden;">
+      <div style="background: var(--earth-pale); padding: 2mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--earth);">環境省</div>
+      <div style="padding: 3mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        <div><strong style="color: var(--text);">やんばる国立公園 利用拠点整備</strong><br>世界自然遺産エリアの活用・保全と連携した事業として申請可能。環境再生活動の実績が強みになる。</div>
+      </div>
+    </div>
+    <div style="border: 1.5px solid var(--accent); border-radius: 8px; overflow: hidden;">
+      <div style="background: #fff8f0; padding: 2mm 3mm; font-size: 7.5pt; font-weight: 700; color: var(--accent);">中小企業庁・金融機関</div>
+      <div style="padding: 3mm 4mm; font-size: 7pt; color: var(--text-muted); line-height: 1.7;">
+        <div><strong style="color: var(--text);">事業再構築補助金・小規模事業者持続化補助金</strong><br>宿泊業からウェルネスツーリズムへの事業転換に対応。環境再生ブランディングは申請の差別化ポイントになる。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title earth">ネクストアクション</div>
+  <div style="display: flex; flex-direction: column; gap: 2.5mm; margin-bottom: 5mm;">
+    <div style="display: flex; gap: 3mm; align-items: flex-start; background: var(--forest-pale); border-radius: 8px; padding: 3mm 4mm;">
+      <div style="background: var(--forest); color: white; border-radius: 50%; width: 6mm; height: 6mm; display: flex; align-items: center; justify-content: center; font-size: 7pt; font-weight: 700; flex-shrink: 0; margin-top: 0.5mm;">1</div>
+      <div style="font-size: 7.5pt; color: var(--text-muted); line-height: 1.6;"><strong style="color: var(--forest);">オーナーとの合意形成・役割設計</strong>　プログラム内容・収益分配・ゲスト対応のルールを明確にする。</div>
+    </div>
+    <div style="display: flex; gap: 3mm; align-items: flex-start; background: var(--earth-pale); border-radius: 8px; padding: 3mm 4mm;">
+      <div style="background: var(--earth); color: white; border-radius: 50%; width: 6mm; height: 6mm; display: flex; align-items: center; justify-content: center; font-size: 7pt; font-weight: 700; flex-shrink: 0; margin-top: 0.5mm;">2</div>
+      <div style="font-size: 7.5pt; color: var(--text-muted); line-height: 1.6;"><strong style="color: var(--earth);">フィールド初回見立て（Phase 0）</strong>　1万坪の森に入り、水の流れ・植生・藪の状態を観察・記録する。この記録が今後すべての起点になる。</div>
+    </div>
+    <div style="display: flex; gap: 3mm; align-items: flex-start; background: var(--ocean-pale); border-radius: 8px; padding: 3mm 4mm;">
+      <div style="background: var(--ocean); color: white; border-radius: 50%; width: 6mm; height: 6mm; display: flex; align-items: center; justify-content: center; font-size: 7pt; font-weight: 700; flex-shrink: 0; margin-top: 0.5mm;">3</div>
+      <div style="font-size: 7.5pt; color: var(--text-muted); line-height: 1.6;"><strong style="color: var(--ocean);">今帰仁ちゅーなーとの連携開始</strong>　村公認ガイドと接点をつくり、TubamYプログラムとの協働モデルを設計する。</div>
+    </div>
+    <div style="display: flex; gap: 3mm; align-items: flex-start; background: var(--sand); border-radius: 8px; padding: 3mm 4mm; border: 1px solid var(--sand-dark);">
+      <div style="background: var(--accent); color: white; border-radius: 50%; width: 6mm; height: 6mm; display: flex; align-items: center; justify-content: center; font-size: 7pt; font-weight: 700; flex-shrink: 0; margin-top: 0.5mm;">4</div>
+      <div style="font-size: 7.5pt; color: var(--text-muted); line-height: 1.6;"><strong style="color: var(--accent);">モニタープログラムの実施</strong>　知人・小規模グループを招いてプログラムを試験実施。フィードバックをもとにコンテンツを磨く。</div>
+    </div>
+  </div>
+
+  <div style="background: linear-gradient(135deg, #0d3b2e 0%, #3d1f0a 60%, #1a6b8a 100%); border-radius: 10px; padding: 4mm 6mm; color: white;">
+    <div style="font-size: 7pt; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; margin-bottom: 2mm;">TubamY が体現するもの</div>
+    <div style="font-family: 'Noto Serif JP', serif; font-size: 10pt; font-weight: 700; line-height: 1.9; color: rgba(255,255,255,0.92);">
+      1万坪の森を整えるプロセスは、完成を目指す工事ではない。<br>
+      「整え続ける」ことそのものが、場の価値であり、ゲストが何度も帰ってくる理由になる。<br>
+      <span style="color: #7de8c8;">やんばるの再生型ウェルネスツーリズムの、最初の現場がここにある。</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
